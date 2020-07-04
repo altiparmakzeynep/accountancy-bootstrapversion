@@ -102,52 +102,76 @@
     position: fixed;
 }
 
-.item1 {
-    width: 35%;
-    height: 7%;
-    background-color: #e5e6e9;
-    border-radius: 8px;
-    top: 10%;
-    left: 10%;
+.customers {
+    width: 45%;
+    height: 14%;
+    background-color: #a7a6ac;
+    border-radius: 12px;
+    top: 6%;
+    left: 4%;
     position: absolute;
 }
 
-.item2 {
-    width: 35%;
-    height: 7%;
-    background-color: #e5e6e9;
-    border-radius: 8px;
-    top: 25%;
-    left: 10%;
+.companyDetail {
+    width: 45%;
+    height: 24%;
+    background-color: white;
+    border-radius: 10px;
+    top: 24%;
+    left: 4%;
     position: absolute;
 }
 
-.item3 {
-    width: 35%;
-    height: 7%;
-    background-color: #e5e6e9;
-    border-radius: 8px;
-    top: 40%;
-    left: 10%;
+.notes {
+    width: 45%;
+    height: 45%;
+    background-color: white;
+    border-radius: 10px;
+    bottom: 3%;
+    left: 4%;
     position: absolute;
 }
 
-.item4 {
-    width: 35%;
-    height: 7%;
-    background-color: #e5e6e9;
-    border-radius: 8px;
-    top: 55%;
-    left: 10%;
+.pay {
+    width: 10%;
+    height: 15%;
+    background-color: #a7a6a7;
+    border-radius: 10px;
+    top: 6%;
+    right: 4%;
     position: absolute;
+    border: none;
 }
 
-.item5 {
-    width: 35%;
-    height: 7%;
-    background-color: #e5e6e9;
-    border-radius: 8px;
-    top: 70%;
-    left: 10%;
+.receive {
+    width: 10%;
+    height: 15%;
+    background-color: #a7a6a7;
+    border-radius: 10px;
+    top: 6%;
+    right: 16%;
     position: absolute;
+    border: none;
+}
+
+.addNote {
+    width: 10%;
+    height: 15%;
+    background-color: #a7a6a7;
+    border-radius: 10px;
+    top: 6%;
+    right: 28%;
+    position: absolute;
+    border: none;
+}
+
+.history {
+    width: 34%;
+    height: 72%;
+    background-color: white;
+    border-radius: 10px;
+    bottom: 3%;
+    right: 3.5%;
+    position: absolute;
+    border: none;
 }

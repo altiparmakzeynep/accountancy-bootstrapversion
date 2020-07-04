@@ -102,52 +102,12 @@
     position: fixed;
 }
 
-.item1 {
-    width: 35%;
-    height: 7%;
-    background-color: #e5e6e9;
-    border-radius: 8px;
+.customers {
+    width: 36%;
+    height: 13%;
+    background-color: #a7a6ac;
+    border-radius: 12px;
     top: 10%;
-    left: 10%;
-    position: absolute;
-}
-
-.item2 {
-    width: 35%;
-    height: 7%;
-    background-color: #e5e6e9;
-    border-radius: 8px;
-    top: 25%;
-    left: 10%;
-    position: absolute;
-}
-
-.item3 {
-    width: 35%;
-    height: 7%;
-    background-color: #e5e6e9;
-    border-radius: 8px;
-    top: 40%;
-    left: 10%;
-    position: absolute;
-}
-
-.item4 {
-    width: 35%;
-    height: 7%;
-    background-color: #e5e6e9;
-    border-radius: 8px;
-    top: 55%;
-    left: 10%;
-    position: absolute;
-}
-
-.item5 {
-    width: 35%;
-    height: 7%;
-    background-color: #e5e6e9;
-    border-radius: 8px;
-    top: 70%;
     left: 10%;
     position: absolute;
 }
