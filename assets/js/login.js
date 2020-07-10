@@ -2,20 +2,34 @@ document.querySelector("#postData").addEventListener("click", postData);
 
 function postData() {
     const data = {
-        username: "seyithanerdogan",
-        password: "12345"
+        username: document.getElementById("username").value,
+        password: document.getElementById("password").value
 
     }
+
+
     var json = JSON.stringify(data);
-    var url = "http://192.168.1.112:3000/todos";
+    var url = "https://16b1c0cfae48.ngrok.io/users/login";
     var xhr = new XMLHttpRequest();
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-type", "application/json; charset=utf-8");
 
     xhr.onload = function() {
-        console.log(xhr.status);
-        console.log(xhr.readyState);
-        console.log(data);
-    }
+
+
+            var post = JSON.parse(this.response);
+            if (post.status === "success") {
+                console.log(post.status);
+            } else {
+                console.log(post.status + post.description);
+
+            }
+            //console.log(xhr.readyState);
+            //console.log(data);
+
+
+        }
+        //console.log(xhr);
     xhr.send(json);
+
 }
