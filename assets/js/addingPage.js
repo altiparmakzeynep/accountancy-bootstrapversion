@@ -1,16 +1,20 @@
-document.querySelector("#postData").addEventListener("click", postData);
+document.querySelector("#saveButton").addEventListener("click", postData);
 
 function postData() {
     const data = {
-        username: document.getElementById("username").value,
-        password: document.getElementById("password").value
+        userID: "1",
+        customerInfo: document.getElementById("item1").value,
+        customerName: document.getElementById("item2").value,
+        phoneNumber: document.getElementById("item3").value,
+        taxNumber: document.getElementById("item4").value,
+        taxAddress: document.getElementById("item5").value
 
     }
 
 
     var json = JSON.stringify(data);
     //var url = "https://16b1c0cfae48.ngrok.io/users/login";
-    var url = "http://192.168.1.112:3000/users/login";
+    var url = "http://192.168.1.123:3000/customers/add";
     var xhr = new XMLHttpRequest();
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-type", "application/json; charset=utf-8");
@@ -26,8 +30,8 @@ function postData() {
             console.log(post);
 
         }
-        //console.log(xhr.readyState);
-        //console.log(data);
+        console.log(xhr.readyState);
+        console.log(data);
 
 
     }

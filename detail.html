@@ -40,10 +40,29 @@
                         <div class="companyDetail"></div>
                         <div class="notes"></div>
                         <div class="buttons">
-                            <button class="pay" data-toggle="modal" data-target="#myModal"></button>
+                            <button class="pay" id="myBtn"></button>
+                            <button class="receive" id="myBtn">
+                            </button>
+                            <button class="addNote" id="myBtn"></button>
+                            <!-- The Modal -->
+                            <div id="myModal" class="modal">
 
-                            <button class="receive"></button>
-                            <button class="addNote"></button>
+                                <!-- Modal content -->
+                                <div class="modal-content">
+                                    <div class="paymentAmount"></div>
+                                    <div class="KDV">
+                                        <input type="checkbox" class="checkbox" id="checkbox1">
+                                    </div>
+                                    <div class="withoutKDV">
+                                        <input type="checkbox" class="checkbox" id="checkbox2">
+                                    </div>
+                                    <div class="date"></div>
+                                    <button class="takePayment">bas</button>
+
+                                </div>
+
+                            </div>
+
                             <div class="history "></div>
                         </div>
 
@@ -59,24 +78,6 @@
 
 
 
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-
-                <div class="modal-body">
-                    <div class="deneme"></div>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-
-        </div>
-    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
