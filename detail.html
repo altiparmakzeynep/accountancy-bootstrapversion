@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/detail.css">
 
@@ -19,15 +20,27 @@
 
         <nav class="navbar navbar-light bg-light">
             <div class="plus">
-                <button class="plusButton"><img src="./assets/img/plus.png" width="30" height="30"></button>
+                <button class="plusButton" onclick="window.location.href='addingPage.html'"><img src="./assets/img/plus.png" width="30" height="30"></button>
             </div>
             <div class="row">
                 <div class="left col-4">
                     <div class="leftBackground"></div>
                     <div class="leftInBackground">
+                        <hr class="hr">
                         <div class="photo"></div>
-                        <div class="leftBigWhite"></div>
-                        <div class="leftLittleWhite"></div>
+                        <p class="nameSurname">Seyithan Erdoğan</p>
+                        <p class="homePageCompanyName">PROJECT XR</p>
+                        <div class="leftBigWhite">
+                            <div class="topInfo">
+                                <p class="inWithKDV">KDV'li Alınan:</p>
+                                <p class="amountofKDV">KDV Miktarı:</p>
+                                <p class="inWithoutKDV">KDV'siz Alınan:</p>
+                                <p class="out">Ödenen:</p>
+                            </div>
+                        </div>
+                        <div class="leftLittleWhite">
+                            <p class="total">Toplam Bakiye:</p>
+                        </div>
                     </div>
 
 
@@ -36,34 +49,51 @@
                     <div class="rightBackground">
                         <div>
                             <img class="icon" src="./assets/img/icon.png"></div>
-                        <div class="customers"></div>
-                        <div class="companyDetail"></div>
-                        <div class="notes"></div>
+                        <div class="customers">
+                            <p class="companyName">Şirket adı:</p>
+                            <p class="companyInfo">Şirket ünvanı:</p>
+                        </div>
+                        <div class="companyDetail">
+                            <p class="moneyIn">Alınan Ödeme: </p>
+                            <hr class="hrRight">
+                            <p class="moneyOut">Yapılan Ödeme:</p>
+                        </div>
+                        <div class="notes">
+                            <p class="notesHeader">Notlar</p>
+                        </div>
                         <div class="buttons">
-                            <button class="pay" id="myBtn"></button>
-                            <button class="receive" id="myBtn">
+                            <button class="addNote" id="myBtn1">Not Ekle</button>
+                            <button class="receive" id="myBtn2">Ödeme Al
                             </button>
-                            <button class="addNote" id="myBtn"></button>
+                            <button class="pay" id="myBtn3">Ödeme Yap</button>
                             <!-- The Modal -->
                             <div id="myModal" class="modal">
 
                                 <!-- Modal content -->
                                 <div class="modal-content">
-                                    <div class="paymentAmount"></div>
+                                    <h6>Not Ekle</h6>
+                                    <input type="text" class="writeNote" id="writeNote">
+                                    <!-- <div class="paymentAmount">
+                                    </div>
                                     <div class="KDV">
                                         <input type="checkbox" class="checkbox" id="checkbox1">
                                     </div>
                                     <div class="withoutKDV">
                                         <input type="checkbox" class="checkbox" id="checkbox2">
+                                    </div>-->
+
+                                    <div class="date">
+                                        <input type="date" class="calendar" id="calendar">
                                     </div>
-                                    <div class="date"></div>
-                                    <button class="takePayment">bas</button>
+                                    <button class="takePayment" id="takePayment">kaydet</button>
 
                                 </div>
 
                             </div>
 
-                            <div class="history "></div>
+                            <div class="history">
+                                <p>Alınan-Yapılan Ödeme Listesi</p>
+                            </div>
                         </div>
 
                     </div>
@@ -73,11 +103,6 @@
     </div>
     </nav>
     </div>
-
-
-
-
-
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

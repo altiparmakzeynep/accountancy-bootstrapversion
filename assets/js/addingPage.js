@@ -2,7 +2,7 @@ document.querySelector("#saveButton").addEventListener("click", postData);
 
 function postData() {
     const data = {
-        userID: "1",
+        userID: "9",
         customerInfo: document.getElementById("item1").value,
         customerName: document.getElementById("item2").value,
         phoneNumber: document.getElementById("item3").value,
@@ -14,7 +14,8 @@ function postData() {
 
     var json = JSON.stringify(data);
     //var url = "https://16b1c0cfae48.ngrok.io/users/login";
-    var url = "http://192.168.1.123:3000/customers/add";
+    //var url = "http://192.168.1.152:3000/customers/add";
+    var url = "https://accountancy-app-api.herokuapp.com/customers/add";
     var xhr = new XMLHttpRequest();
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-type", "application/json; charset=utf-8");
