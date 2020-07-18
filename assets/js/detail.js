@@ -35,7 +35,7 @@ document.querySelector("#takePayment").addEventListener("click", postData);
 
 function postData() {
     const data = {
-        custorID: "1",
+        customerID: "2",
         notes: document.getElementById("writeNote").value,
         date: document.getElementById("calendar").value,
 
@@ -43,7 +43,7 @@ function postData() {
 
 
     var json = JSON.stringify(data);
-    var url = "http://192.168.1.152:3000/notes/add";
+    var url = "http://192.168.1.152:3000/api/v1/notes/add";
     //var url = "https://accountancy-app-api.herokuapp.com//notes/add";
     var xhr = new XMLHttpRequest();
     xhr.open("POST", url, true);

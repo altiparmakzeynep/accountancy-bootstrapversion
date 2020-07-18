@@ -49,20 +49,20 @@ function postData() {
     var json = JSON.stringify(data);
     //var url = "https://16b1c0cfae48.ngrok.io/users/login";
     //var url = "http://192.168.1.152:3000/users/login";
-    var url = "https://accountancy-app-api.herokuapp.com/users/login";
+    var url = "http://192.168.1.152:3000/api/v1/users/login";
     var xhr = new XMLHttpRequest();
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-type", "application/json; charset=utf-8");
 
 
     xhr.onload = function() {
-
-
         var post = JSON.parse(this.response);
-        console.log(post);
+        console.log(post.data);
+        var user = post.data;
+        console.log("Umood", post.data.id);
         if (post.status === "success") {
             console.log(post);
-            window.location.assign("customers.html");
+            //window.location.assign("customers.html");
         } else {
             console.log(post);
 

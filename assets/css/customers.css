@@ -187,3 +187,17 @@
     top: 3%;
     background: none;
 }
+
+.kutu {
+    width: 200px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: bold;
+    background: red;
+    color: white;
+    margin: 5px;
+    float: left;
+}
