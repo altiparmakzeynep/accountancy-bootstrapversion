@@ -38,6 +38,7 @@ function postData() {
 }*/
 document.querySelector("#postData").addEventListener("click", postData);
 
+
 function postData() {
     const data = {
         username: document.getElementById("username").value,
@@ -57,12 +58,12 @@ function postData() {
 
     xhr.onload = function() {
         var post = JSON.parse(this.response);
-        console.log(post.data);
+        //console.log(post.data);
         var user = post.data;
         console.log("Umood", post.data.id);
         if (post.status === "success") {
             console.log(post);
-            //window.location.assign("customers.html");
+            window.location.assign(`customers.html`);
         } else {
             console.log(post);
 
@@ -74,5 +75,6 @@ function postData() {
     }
 
     xhr.send(json);
+
 
 }

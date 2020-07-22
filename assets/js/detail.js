@@ -3,10 +3,6 @@ var modal = document.getElementById("myModal");
 
 // Get the button that opens the modal
 var btn1 = document.getElementById("myBtn1");
-var btn2 = document.getElementById("myBtn2");
-var btn3 = document.getElementById("myBtn3");
-
-
 
 
 // Get the <span> element that closes the modal
@@ -28,6 +24,8 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
+
 
 
 //post notes
@@ -58,7 +56,7 @@ function postData() {
     xhr.send(json);
 
     //LOCAL STORAGE
-    const notes = localStorage.setItem("notes", data.notes);
-    const date = localStorage.setItem("date", data.date);
+    /*const notes = localStorage.setItem("notes", data.notes);
+    const date = localStorage.setItem("date", data.date);*/
 }
-console.log(localStorage);
+//console.log(localStorage);
