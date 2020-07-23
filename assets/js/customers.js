@@ -23,25 +23,40 @@ function getData() {
 
 
 
-        var html = "";
-        for (var i = 0; i < array.length; i++) {
-            //console.log(array[i].customerName);
-            html += ` 
-            
-            <div class="customers" id="customers">
+        array.map(item => {
+                console.log("item: ", item);
+                var html = "";
+                for (var i = 0; i < array.length; i++) {
+
+                    html += (` <div class="customers" id="customers">
             <p class="companyName">Şirket adı:${array[1].customerName}</p>
             <p class="companyInfo">Şirket ünvanı:${array[1].customerInfo}</p>
             <div class="deleteCustomer">
             <button class="deleteButton"><img src=" ./assets/img/delete.png " width="9" height="9"></button>
             </div>
-            </div>`;
+            </div>`)
+                    document.querySelector("#customers").innerHTML = html;
+                }
+            })
+            // var html = "";
+            // for (var i = 0; i < array.length; i++) {
+            //     //console.log(array[i].customerName);
+            //     html += ` 
 
-            document.querySelector("#customers").innerHTML = html;
+        //     <div class="customers" id="customers">
+        //     <p class="companyName">Şirket adı:${array[1].customerName}</p>
+        //     <p class="companyInfo">Şirket ünvanı:${array[1].customerInfo}</p>
+        //     <div class="deleteCustomer">
+        //     <button class="deleteButton"><img src=" ./assets/img/delete.png " width="9" height="9"></button>
+        //     </div>
+        //     </div>`;
+
+        //     document.querySelector("#customers").innerHTML = html;
 
 
 
 
-        }
+        // }
 
 
 
