@@ -1,10 +1,12 @@
+var id = localStorage.getItem("id", id);
+
 document.querySelector("#saveButton").addEventListener("click", postData);
 
 
 
 function postData() {
     const data = {
-        userID: "110",
+        userID: id,
         customerInfo: document.getElementById("companyInput").value,
         customerName: document.getElementById("companyNameInput").value,
         phoneNumber: document.getElementById("numberInput").value,

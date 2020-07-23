@@ -102,14 +102,29 @@
     position: fixed;
 }
 
+.homepage {
+    background-color: #282425;
+    border: none;
+    position: fixed;
+    left: 2%;
+}
+
+.logOut {
+    background-color: #282425;
+    border: none;
+    position: fixed;
+    left: 6%;
+    margin-top: 0%;
+}
+
 .customers {
-    width: 36%;
-    height: 13%;
+    width: 30%;
+    height: 15%;
     background-color: #a7a6ac;
     border-radius: 12px;
-    top: 10%;
-    left: 10%;
-    position: absolute;
+    float: left;
+    margin-top: 5%;
+    margin-left: 10%;
 }
 
 .hr {
@@ -182,23 +197,17 @@
 
 .deleteButton {
     border: none;
-    position: fixed;
     background: none;
-    right: 41%;
+    float: right;
+    margin-top: -16%;
 }
 
 .companyName {
     font-size: 10pt;
-    position: absolute;
     float: left;
     margin-left: 5%;
-    margin-top: 4%;
-}
-
-.companyInfo {
-    font-size: 10pt;
-    position: absolute;
-    float: left;
-    margin-left: 5%;
-    margin-top: 20%;
+    margin-top: 9%;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    line-height: 0.1%;
 }

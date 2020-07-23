@@ -102,6 +102,21 @@
                         position: fixed;
                     }
                     
+                    .homepage {
+                        background-color: #282425;
+                        border: none;
+                        position: fixed;
+                        left: 2%;
+                    }
+                    
+                    .logOut {
+                        background-color: #282425;
+                        border: none;
+                        position: fixed;
+                        left: 6%;
+                        margin-top: 0%;
+                    }
+                    
                     .customers {
                         width: 45%;
                         height: 14%;

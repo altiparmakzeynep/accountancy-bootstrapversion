@@ -100,6 +100,28 @@
     background-color: #282425;
     border: none;
     position: fixed;
+    float: right;
+}
+
+.homepage {
+    background-color: #282425;
+    border: none;
+    position: fixed;
+    left: 2%;
+}
+
+.logOut {
+    background-color: #282425;
+    border: none;
+    position: fixed;
+    left: 6%;
+    margin-top: 0%;
+}
+
+.accHeader {
+    border: none;
+    color: white;
+    position: relative;
 }
 
 .companyInput {
