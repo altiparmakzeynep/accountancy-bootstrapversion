@@ -3,7 +3,7 @@ var id = localStorage.getItem("id", id);
 
 getData();
 
-showData(item);
+
 
 
 function getData() {
@@ -33,19 +33,14 @@ function getData() {
             ul.appendChild(div);
             div = "";
 
+
             //FOR LOOP
             for (var i = 0; i < array.length; i++) {
 
-                //set customer's ID in Local Storage
-                const customerID = localStorage.setItem("customerID", array[i].id);
-
-                //get customer's ID in Local Storage
-                var cID = localStorage.getItem("customerID", customerID);
-                console.log(cID);
 
                 //Every buttons have own id from customers array
                 div += `
-                <button class="customers" id = "${array[i].id}" onClick="showData(this)">
+                <button class="customers" id = "${array[i].id}" onclick="showData(this)">
                     <p class="companyName">Şirket adı: ${array[i].customerName}</p>
                     <p class="companyName">Şirket ünvanı: ${array[i].customerInfo}</p>
                   
@@ -65,13 +60,23 @@ function getData() {
 
 
 
+
     }
     xhr.send();
 }
 
+
 function showData(item) {
     //Assign the customer ID to item ID
+
+    //set customer's ID in Local Storage
+    //const customerID = localStorage.setItem("customerID", array.id);
+
+    // //get customer's ID in Local Storage
+    // var cID = localStorage.getItem("customerID", customerID);
+    // console.log(cID);
     var cID = item.id;
     console.log(cID);
+
 
 }

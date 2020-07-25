@@ -27,7 +27,8 @@ window.onclick = function(event) {
 
 
 
-
+showData();
+console.log(cID);
 //post notes
 var id = localStorage.getItem("id", id);
 
@@ -37,9 +38,11 @@ document.querySelector("#addNoteButton").addEventListener("click", getData);
 
 
 
+
+
 function postData() {
     const data = {
-        customerID: "",
+        customerID: "cID",
         notes: document.getElementById("writeNote").value,
         date: document.getElementById("calendar").value,
 
@@ -47,7 +50,8 @@ function postData() {
 
     //sending notes
     var json = JSON.stringify(data);
-    var url = "http://192.168.1.152:3000/api/v1/notes/add";
+    //var url = "http://192.168.1.152:3000/api/v1/notes/add";
+    var url = `http://cab0a1ac525b.ngrok.io/api/v1/notes/add`;
     var xhr = new XMLHttpRequest();
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-type", "application/json; charset=utf-8");
@@ -70,12 +74,14 @@ function postData() {
 //console.log(localStorage);
 
 var id = localStorage.getItem("id", id);
+console.log(id);
 
 //writing note to page
 getData();
 
 function getData() {
-    var url = `http://192.168.1.152:3000/api/v1/customers/${id}`;
+    //var url = `http://192.168.1.152:3000/api/v1/customers/${id}`;
+    var url = `http: //cab0a1ac525b.ngrok.io/api/v1/customers/${id}`;
     var xhr = new XMLHttpRequest();
 
     xhr.open("GET", url, true);
@@ -86,12 +92,6 @@ function getData() {
         // console.log(post.data.customers);
         var array = post.data.customers;
         // console.log(post.data);
-
-        // console.log(post.data.companyName);
-        // console.log(post.data.companyInfo);
-        // console.log(post.data.fullName);
-
-
 
 
         ul = document.createElement('ul');
