@@ -125,6 +125,7 @@
     float: left;
     margin-top: 5%;
     margin-left: 10%;
+    border: none;
 }
 
 .hr {
@@ -199,7 +200,9 @@
     border: none;
     background: none;
     float: right;
-    margin-top: -16%;
+    margin-top: 4%;
+    position: absolute;
+    margin-right: 19%;
 }
 
 .companyName {

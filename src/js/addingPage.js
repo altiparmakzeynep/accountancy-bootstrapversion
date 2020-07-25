@@ -6,7 +6,7 @@ document.querySelector("#saveButton").addEventListener("click", postData);
 
 function postData() {
     const data = {
-        userID: id,
+        userID: "",
         customerInfo: document.getElementById("companyInput").value,
         customerName: document.getElementById("companyNameInput").value,
         phoneNumber: document.getElementById("numberInput").value,

@@ -3,8 +3,12 @@ var id = localStorage.getItem("id", id);
 
 getData();
 
+showData(item);
+
+
 function getData() {
-    var url = `http://192.168.1.152:3000/api/v1/customers/${id}`;
+    //var url = `http://192.168.1.152:3000/api/v1/customers/${id}`;
+    var url = `http://cab0a1ac525b.ngrok.io/api/v1/customers/${id}`;
     var xhr = new XMLHttpRequest();
 
     xhr.open("GET", url, true);
@@ -15,12 +19,6 @@ function getData() {
         console.log(post.data.customers);
         var array = post.data.customers;
         console.log(post.data);
-
-        console.log(post.data.companyName);
-        console.log(post.data.companyInfo);
-        console.log(post.data.fullName);
-
-
 
 
         ul = document.createElement('ul');
@@ -34,16 +32,28 @@ function getData() {
 
             ul.appendChild(div);
             div = "";
+
+            //FOR LOOP
             for (var i = 0; i < array.length; i++) {
+
+                //set customer's ID in Local Storage
+                const customerID = localStorage.setItem("customerID", array[i].id);
+
+                //get customer's ID in Local Storage
+                var cID = localStorage.getItem("customerID", customerID);
+                console.log(cID);
+
+                //Every buttons have own id from customers array
                 div += `
-                <div class="customers" id="customers">
+                <button class="customers" id = "${array[i].id}" onClick="showData(this)">
                     <p class="companyName">Şirket adı: ${array[i].customerName}</p>
                     <p class="companyName">Şirket ünvanı: ${array[i].customerInfo}</p>
                   
                     <div class="deleteCustomer">
-                        <button class="deleteButton"><img src=" ./assets/img/delete.png " width="9" height="9"></button>
+                        <button class="deleteButton" ><img src=" ./assets/img/delete.png " width="9" height="9"></button>
                     </div>
-                </div>`;
+                </button>`;
+
                 //div.innerHTML += array[i].customerName;
                 document.querySelector("#rightBackground").innerHTML = div;
             }
@@ -57,4 +67,11 @@ function getData() {
 
     }
     xhr.send();
+}
+
+function showData(item) {
+    //Assign the customer ID to item ID
+    var cID = item.id;
+    console.log(cID);
+
 }
