@@ -27,22 +27,25 @@ window.onclick = function(event) {
 
 
 
-showData();
-console.log(cID);
+
 //post notes
 var id = localStorage.getItem("id", id);
 
 document.querySelector("#addNoteButton").addEventListener("click", postData);
-document.querySelector("#addNoteButton").addEventListener("click", getData);
+//document.querySelector("#addNoteButton").addEventListener("click", getNotes);
 
 
 
 
 
-
+//ADD NOTE
 function postData() {
+    //customer ID from another JS page
+    var cID = sessionStorage.getItem('cID');
+    // console.log(cID);
+
     const data = {
-        customerID: "cID",
+        customerID: cID,
         notes: document.getElementById("writeNote").value,
         date: document.getElementById("calendar").value,
 
@@ -51,71 +54,92 @@ function postData() {
     //sending notes
     var json = JSON.stringify(data);
     //var url = "http://192.168.1.152:3000/api/v1/notes/add";
-    var url = `http://cab0a1ac525b.ngrok.io/api/v1/notes/add`;
+    var url = `http://e3b5dab837cc.ngrok.io/api/v1/notes/add`;
     var xhr = new XMLHttpRequest();
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-type", "application/json; charset=utf-8");
 
 
     xhr.onload = function() {
-        //console.log(xhr.status);
-        //console.log(xhr.readyState);
-        //console.log(data);
+
     }
     xhr.send(json);
 
     //LOCAL STORAGE
-    const notes = localStorage.setItem("notes", data.notes);
-    const date = localStorage.setItem("date", data.date);
-    console.log(data.notes);
-    console.log(data.date);
+    // const deneme = localStorage.setItem("cıd", data.customerID);
+    // const notes = localStorage.setItem("notes", data.notes);
+    // const date = localStorage.setItem("date", data.date);
+    // console.log(data.notes);
+    // console.log(data.date);
+    // console.log(deneme);
 
 }
 //console.log(localStorage);
 
 var id = localStorage.getItem("id", id);
-console.log(id);
 
-//writing note to page
+//Call function
 getData();
 
+
+//get data
 function getData() {
+
+    //customer ID from another JS page
+    var cID = sessionStorage.getItem('cID');
+    //console.log(cID);
+
     //var url = `http://192.168.1.152:3000/api/v1/customers/${id}`;
-    var url = `http: //cab0a1ac525b.ngrok.io/api/v1/customers/${id}`;
+    var url = `http://e3b5dab837cc.ngrok.io/api/v1/customers/${id}/details/${cID}`;
     var xhr = new XMLHttpRequest();
 
     xhr.open("GET", url, true);
     xhr.onload = function() {
 
-        //console.log(this.response);
         var post = JSON.parse(this.response);
-        // console.log(post.data.customers);
-        var array = post.data.customers;
-        // console.log(post.data);
-
-
-        ul = document.createElement('ul');
-        document.getElementById('customers').appendChild(ul);
-
-        array.forEach(function(item) {
-            let li = document.createElement('li');
-            //div.classList = "customers";
-
-            ul.appendChild(li);
-            div = "";
-            for (var i = 0; i < array.length; i++) {
-                div += `
-                <p class="companyName">${array[i].customerName}</p>
-                <p class="companyInfo">${array[i].customerInfo}</p>`;
-                //div.innerHTML += array[i].customerName;
-                document.querySelector("#customers").innerHTML = div;
-            }
-        });
+        var array = post.customer;
+        console.log(array);
+        var arrayNotes = array.notes;
 
 
 
 
+        div = "";
+        div += `
+                <p class="companyName">${array.customerName}</p>
+                <p class="companyInfo">${array.customerInfo}</p>`;;
 
+        document.querySelector("#customers").innerHTML = div;
+
+    }
+    xhr.send();
+}
+
+getNotes();
+//GET NOTE
+function getNotes() {
+    var cID = sessionStorage.getItem('cID');
+    var url = `http://e3b5dab837cc.ngrok.io/api/v1/customers/${id}/details/${cID}`;
+    var xhr = new XMLHttpRequest();
+
+    xhr.open("GET", url, true);
+    xhr.onload = function() {
+        var post = JSON.parse(this.response);
+        var array = post.customer;
+        console.log(array);
+        var arrayNotes = array.notes;
+
+
+        div = "";
+
+        for (var n = 0; n < arrayNotes.length; n++) {
+            console.log(array.notes[n].notes);
+            div += `
+        <p>${arrayNotes[n].notes}</p>
+       `;
+
+            document.querySelector("#notes").innerHTML = div;
+        }
 
 
     }
