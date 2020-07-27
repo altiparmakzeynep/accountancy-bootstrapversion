@@ -10,6 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="./src/css/detail.css">
+    <link rel="stylesheet" href="./src/css/payment.css">
+    <link rel="stylesheet" href="./src/css/getpaid.css">
+
 
 
 
@@ -57,23 +60,23 @@
                         <div class="customers" id="customers">
 
                         </div>
-                        <div class="companyDetail">
-                            <p class="moneyIn">Alınan Ödeme: </p>
+                        <div class="companyDetail" id="companyDetail">
+                            <!-- <p class="moneyIn">Alınan Ödeme: </p> -->
                             <hr class="hrRight">
-                            <p class="moneyOut">Yapılan Ödeme:</p>
+                            <!-- <p class="moneyOut">Yapılan Ödeme:</p> -->
                         </div>
                         <div class="notes" id="notes">
                             <p class="notesHeader">Notlar</p>
 
                         </div>
                         <div class="buttons">
-                            <button class="addNote" id="myBtn1">Not Ekle</button>
-                            <button class="receive" id="myBtn2">Ödeme Al
+                            <button class="addNote" id="notesButton">Not Ekle</button>
+                            <button class="receive" id="getPaidButton">Ödeme Al
                             </button>
-                            <button class="pay" id="myBtn3">Ödeme Yap</button>
+                            <button class="pay" id="payButton">Ödeme Yap</button>
+
                             <!-- Note's Modal -->
                             <div id="myModal" class="modal">
-
                                 <!--Note's Modal content -->
                                 <div class="modal-content">
                                     <h6>Not Ekle</h6>
@@ -90,15 +93,46 @@
                                     <div class="date">
                                         <input type="date" class="calendar" id="calendar">
                                     </div>
-                                    <button class="addNoteButton" id="addNoteButton">kaydet</button>
-
+                                    <button class="addNoteSaveButton" id="addNoteSaveButton">kaydet</button>
                                 </div>
+                            </div>
 
+                            <!-- getpaid's Modal -->
+                            <div id="getpaidModal" class="modal3">
+                                <!--getpaid's Modal content -->
+                                <div class="modal-content">
+                                    <h6>Ödeme Al</h6>
+                                    <!-- <input type="text" class="writeNote" id="writeNote"> -->
+                                    <input type="text" class="paymentAmount" id="getpaid">
+
+
+                                    <div class="getpaidDate">
+                                        <input type="date" class="getpaidCalendar" id="getpaidCalendar">
+                                    </div>
+                                    <button class="getpaidSaveButton" id="getpaidSaveButton">kaydet</button>
+                                </div>
                             </div>
 
 
+                            <!-- payment's Modal -->
+                            <div id="paymentModal" class="modal2">
+                                <!--payment's Modal content -->
+                                <div class="modal-content">
+                                    <h6>Ödeme Yap</h6>
+                                    <!-- <input type="text" class="writeNote" id="writeNote"> -->
+                                    <input type="text" class="paymentAmount" id="paymentAmount">
+
+
+                                    <div class="paymentDate">
+                                        <input type="date" class="paymentCalendar" id="paymentCalendar">
+                                    </div>
+                                    <button class="paymentSaveButton" id="paymentSaveButton">kaydet</button>
+                                </div>
+                            </div>
+
                             <div class="history">
                                 <p>Alınan-Yapılan Ödeme Listesi</p>
+
                             </div>
                         </div>
 
@@ -116,8 +150,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js "></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js "></script>
     <script src="src/js/detail.js"></script>
+    <script src="src/js/payment.js"></script>
+    <script src="src/js/getpaid.js"></script>
 
 
 </body>
+
+</html>
 
 </html>

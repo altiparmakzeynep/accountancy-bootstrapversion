@@ -2,7 +2,7 @@
 var modal = document.getElementById("myModal");
 
 // Get the button that opens the modal
-var btn1 = document.getElementById("myBtn1");
+var btn1 = document.getElementById("notesButton");
 
 
 // Get the <span> element that closes the modal
@@ -31,7 +31,7 @@ window.onclick = function(event) {
 //post notes
 var id = localStorage.getItem("id", id);
 
-document.querySelector("#addNoteButton").addEventListener("click", postData);
+document.querySelector("#addNoteSaveButton").addEventListener("click", postData);
 //document.querySelector("#addNoteButton").addEventListener("click", getNotes);
 
 
@@ -53,8 +53,8 @@ function postData() {
 
     //sending notes
     var json = JSON.stringify(data);
-    //var url = "http://192.168.1.152:3000/api/v1/notes/add";
-    var url = `http://e3b5dab837cc.ngrok.io/api/v1/notes/add`;
+    var url = "http://192.168.1.152:3000/api/v1/notes/add";
+    //var url = `http://e3b5dab837cc.ngrok.io/api/v1/notes/add`;
     var xhr = new XMLHttpRequest();
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-type", "application/json; charset=utf-8");
@@ -89,8 +89,8 @@ function getData() {
     var cID = sessionStorage.getItem('cID');
     //console.log(cID);
 
-    //var url = `http://192.168.1.152:3000/api/v1/customers/${id}`;
-    var url = `http://e3b5dab837cc.ngrok.io/api/v1/customers/${id}/details/${cID}`;
+    var url = `http://192.168.1.152:3000/api/v1/customers/${id}/details/${cID}`;
+    //var url = `http://e3b5dab837cc.ngrok.io/api/v1/customers/${id}/details/${cID}`;
     var xhr = new XMLHttpRequest();
 
     xhr.open("GET", url, true);
@@ -99,7 +99,8 @@ function getData() {
         var post = JSON.parse(this.response);
         var array = post.customer;
         console.log(array);
-        var arrayNotes = array.notes;
+        var arrayCost = array.payments;
+        console.log(arrayCost);
 
 
 
@@ -107,9 +108,25 @@ function getData() {
         div = "";
         div += `
                 <p class="companyName">${array.customerName}</p>
-                <p class="companyInfo">${array.customerInfo}</p>`;;
+                <p class="companyInfo">${array.customerInfo}</p>
+         `;
 
         document.querySelector("#customers").innerHTML = div;
+
+
+        payment = "";
+        for (var i = 0; i < arrayCost.length; i++) {
+            if (arrayCost[i].inOrOut == true) {
+                payment += `
+         <p class="moneyIn">Alınan Ödeme: ${arrayCost[i].cost} </p> `;
+                document.querySelector("#companyDetail").innerHTML = payment;
+            } else {
+                payment += `
+                <p class="moneyOut">Yapılan Ödeme: ${arrayCost[i].cost}</p> `;
+
+                document.querySelector("#companyDetail").innerHTML = payment;
+            }
+        }
 
     }
     xhr.send();
@@ -119,14 +136,15 @@ getNotes();
 //GET NOTE
 function getNotes() {
     var cID = sessionStorage.getItem('cID');
-    var url = `http://e3b5dab837cc.ngrok.io/api/v1/customers/${id}/details/${cID}`;
+    var url = `http://192.168.1.152:3000/api/v1/customers/${id}/details/${cID}`;
+    //var url = `http: //e3b5dab837cc.ngrok.io/api/v1/customers/${id}/details/${cID}`;
     var xhr = new XMLHttpRequest();
 
     xhr.open("GET", url, true);
     xhr.onload = function() {
         var post = JSON.parse(this.response);
         var array = post.customer;
-        console.log(array);
+        //console.log(array);
         var arrayNotes = array.notes;
 
 

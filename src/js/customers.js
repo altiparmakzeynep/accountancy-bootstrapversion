@@ -7,8 +7,8 @@ getData();
 
 
 function getData() {
-    //var url = `http://192.168.1.152:3000/api/v1/customers/${id}`;
-    var url = `http://e3b5dab837cc.ngrok.io/api/v1/customers/${id}`;
+    var url = `http://192.168.1.152:3000/api/v1/customers/${id}`;
+    //var url = `http://e3b5dab837cc.ngrok.io/api/v1/customers/${id}`;
     var xhr = new XMLHttpRequest();
 
     xhr.open("GET", url, true);
@@ -17,6 +17,7 @@ function getData() {
 
         var post = JSON.parse(this.response);
         console.log(post.data.customers);
+
         var array = post.data.customers;
 
 

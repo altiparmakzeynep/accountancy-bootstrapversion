@@ -21,7 +21,7 @@ function postData() {
 
 
     var json = JSON.stringify(data);
-    var url = "http://e3b5dab837cc.ngrok.io/api/v1/customers/add";
+    var url = "http://192.168.1.152:3000/api/v1/customers/add ";
     var xhr = new XMLHttpRequest();
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-type", "application/json; charset=utf-8");
