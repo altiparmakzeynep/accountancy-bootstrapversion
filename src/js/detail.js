@@ -101,7 +101,7 @@ function getData() {
         var post = JSON.parse(this.response);
         var array = post.customer;
         console.log(array);
-        var arrayCost = array.payments;
+        var arrayCost = array.customerbalance;
         console.log(arrayCost);
 
 
@@ -109,7 +109,7 @@ function getData() {
 
         div = "";
         div += `
-                <p class="companyName">${array.customerName}</p>
+                <p class="companyName">${array.customerName} </p>
                 <p class="companyInfo">${array.customerInfo}</p>
          `;
 
@@ -117,18 +117,18 @@ function getData() {
 
 
         payment = "";
-        for (var i = 0; i < arrayCost.length; i++) {
-            if (arrayCost[i].inOrOut == true) {
-                payment += `
-         <p class="moneyIn">Alınan Ödeme: ${arrayCost[i].cost} </p> `;
-                document.querySelector("#companyDetail").innerHTML = payment;
-            } else {
-                payment += `
-                <p class="moneyOut">Yapılan Ödeme: ${arrayCost[i].cost}</p> `;
 
-                document.querySelector("#companyDetail").innerHTML = payment;
-            }
-        }
+
+        payment += `
+         <p class="moneyIn">Alınan Ödeme: ${arrayCost.inMoney} </p> `;
+        document.querySelector("#companyDetail").innerHTML = payment;
+
+        payment += `
+                <p class="moneyOut">Yapılan Ödeme: ${arrayCost.outMoney}</p> `;
+
+        document.querySelector("#companyDetail").innerHTML = payment;
+
+
 
     }
     xhr.send();

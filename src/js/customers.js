@@ -75,3 +75,27 @@ function showData(item) {
 
 
 }
+
+
+// getUser();
+
+// function getUser() {
+//     var cID = sessionStorage.getItem('cID');
+//     var url = `http://192.168.1.152:3000/api/v1/customers/${id}/details/${cID}`;
+//     var xhr = new XMLHttpRequest();
+//     xhr.open("GET", url, true);
+//     xhr.onload = function() {
+//         var post = JSON.parse(this.response);
+//         console.log(post.customer);
+
+//         div = "";
+//         div += `
+//         <p class="nameSurname"></p>
+//         <p class="homePageCompanyName"></p>`;
+//         document.querySelector("#leftInBackground").innerHTML = div;
+
+//     }
+//     xhr.send();
+
+
+// }

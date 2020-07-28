@@ -33,3 +33,9 @@ function postData(e) {
     console.log(data);
     e.preventDefault();
 }
+
+function addCustomer() {
+    window.location.href = 'customers.html';
+
+
+}
