@@ -3,11 +3,9 @@ document.querySelector("#saveButton").addEventListener("click", postData);
 
 
 
-function postData() {
+function postData(e) {
 
     var id = localStorage.getItem("id", id);
-    console.log(id);
-
 
     const data = {
         userID: id,
@@ -21,7 +19,7 @@ function postData() {
 
 
     var json = JSON.stringify(data);
-    var url = "http://192.168.1.152:3000/api/v1/customers/add ";
+    var url = "http://192.168.1.152:3000/api/v1/customers/add";
     var xhr = new XMLHttpRequest();
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-type", "application/json; charset=utf-8");
@@ -32,6 +30,6 @@ function postData() {
     }
 
     xhr.send(json);
-
-
+    console.log(data);
+    e.preventDefault();
 }

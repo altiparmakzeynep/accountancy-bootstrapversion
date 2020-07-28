@@ -83,6 +83,8 @@ getData();
 
 
 //get data
+
+
 function getData() {
 
     //customer ID from another JS page
