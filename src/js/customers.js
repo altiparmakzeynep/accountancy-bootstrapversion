@@ -1,6 +1,7 @@
 var id = localStorage.getItem("id", id);
 
 
+
 document.querySelector('.customersDetailButton').addEventListener('click',Customers);
 
 document.querySelector('.suppliersDetailButton').addEventListener('click',Suppliers);

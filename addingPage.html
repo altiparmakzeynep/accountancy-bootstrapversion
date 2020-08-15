@@ -14,7 +14,7 @@
     <title>At Muhasebe</title>
 </head>
 
-<body>  
+<body>
     <nav class="navbar navbar-light bg-light">
 
         <div class="plus">
@@ -66,8 +66,13 @@
                             <p class="taxOffice">vergi dairesi:</p>
                             <input type="text" class="taxOfficeInput" id="taxOfficeInput">
                             <button class="saveButton" id="saveButton">kaydet</button>
-                            <input class="customerRadioBtn" type="radio">
-                            <input class="supplierRadioBtn" type="radio">
+                         
+                            <div class="radioButtons"> 
+                            <input type="radio" id="customerRadioBtn" name="customerAndSupplierRadioBtn" value="true">
+                            <label for="customerRadioBtn">Müşteri</label><br>
+                            <input type="radio" id="supplierRadioBtn" name="customerAndSupplierRadioBtn" value="false">
+                            <label for="supplierRadioBtn">Tedarikçi</label><br>
+                            </div>
                         </form>
                     </div>
                 </div>

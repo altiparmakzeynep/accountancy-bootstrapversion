@@ -1,4 +1,5 @@
 var id = localStorage.getItem("id", id);
+var category = localStorage.getItem("category", category);
 
 
 getData();

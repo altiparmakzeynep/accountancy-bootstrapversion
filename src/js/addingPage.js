@@ -5,7 +5,18 @@ document.querySelector("#saveButton").addEventListener("click", postData);
 
 function postData(e) {
 
-    var id = localStorage.getItem("id", id);
+    // var id = localStorage.getItem("id", id);
+    var Category = document.getElementsByName('customerAndSupplierRadioBtn');
+
+    for(var i = 0; i < Category.length; i++){
+        if(Category[i].checked){
+            console.log('checked:' + Category[i].value);
+            var isCategory = Category[i].value;
+
+        }}
+        console.log(isCategory);
+        e.preventDefault();
+
 
     const data = {
         userID: id,
