@@ -36,18 +36,18 @@
                     <div class="leftInBackground" id="leftInBackground">
                         <hr class="hr">
                         <div class="photo"></div>
-                        <p class="nameSurname"></p>
-                        <p class="homePageCompanyName"></p>
+                        <!-- <p class="nameSurname"></p>
+                        <p class="homePageCompanyName"></p> -->
                         <div class="leftBigWhite">
-                            <div class="topInfo">
-                                <p class="inWithKDV">KDV'li Alınan:</p>
+                            <div class="topInfo" id="topInfo">
+                                <!-- <p class="inWithKDV">KDV'li Alınan:</p>
                                 <p class="amountofKDV">KDV Miktarı:</p>
                                 <p class="inWithoutKDV">KDV'siz Alınan:</p>
-                                <p class="out">Ödenen:</p>
+                                <p class="out">Ödenen:</p> -->
                             </div>
                         </div>
-                        <div class="leftLittleWhite">
-                            <p class="total">Toplam Bakiye:</p>
+                        <div class="leftLittleWhite" id="leftLittleWhite">
+                            <!-- <p class="total">Toplam Bakiye:</p> -->
                         </div>
                     </div>
 
@@ -81,14 +81,6 @@
                                 <div class="modal-content">
                                     <h6>Not Ekle</h6>
                                     <input type="text" class="writeNote" id="writeNote">
-                                    <!-- <div class="paymentAmount">
-                                    </div>
-                                    <div class="KDV">
-                                        <input type="checkbox" class="checkbox" id="checkbox1">
-                                    </div>
-                                    <div class="withoutKDV">
-                                        <input type="checkbox" class="checkbox" id="checkbox2">
-                                    </div>-->
 
                                     <div class="date">
                                         <input type="date" class="calendar" id="calendar">
@@ -102,8 +94,18 @@
                                 <!--getpaid's Modal content -->
                                 <div class="modal-content">
                                     <h6>Ödeme Al</h6>
-                                    <!-- <input type="text" class="writeNote" id="writeNote"> -->
-                                    <input type="text" class="paymentAmount" id="getpaidAmount">
+
+                                    <div class="paymentAmount">
+                                    </div>
+
+
+                                    <label class="radioLabel">
+                                        <input type="radio" class="radio2" value="false" name="radio2">KDV'Lİ
+                                 </label>
+
+                                    <label class="radioLabel">
+                                            <input type="radio" class="radio2" value="false" name="radio2">KDV'SİZ
+                                    </label>
 
 
                                     <div class="getpaidDate">
@@ -121,8 +123,6 @@
                                     <h6>Ödeme Yap</h6>
                                     <!-- <input type="text" class="writeNote" id="writeNote"> -->
                                     <input type="text" class="paymentAmount" id="paymentAmount">
-
-
                                     <div class="paymentDate">
                                         <input type="date" class="paymentCalendar" id="paymentCalendar">
                                     </div>

@@ -5,9 +5,8 @@ getData();
 
 
 
-
 function getData() {
-    var url = `http://192.168.1.152:3000/api/v1/customers/${id}`;
+    var url = `http://192.168.1.108:3000/api/v1/customers/${id}`;
     //var url = `http://e3b5dab837cc.ngrok.io/api/v1/customers/${id}`;
     var xhr = new XMLHttpRequest();
 
@@ -19,6 +18,9 @@ function getData() {
         console.log(post.data.customers);
 
         var array = post.data.customers;
+        var totalAmount = post.data.userbalance.totalMoney;
+        console.log(post.data);
+        console.log(totalAmount);
 
 
 
@@ -52,7 +54,34 @@ function getData() {
 
                 //div.innerHTML += array[i].customerName;
                 document.querySelector("#rightBackground").innerHTML = div;
+
+
             }
+
+            userInfo = "";
+            userInfo += `
+            <p class="nameSurname">${post.data.fullName}</p>
+            <p class="homePageCompanyName">${post.data.companyName}</p>`;
+            document.querySelector("#userInfo").innerHTML = userInfo;
+
+            topInfo = "";
+            topInfo += `
+            <p class="inWithKDV">KDV'li Alınan:  ${post.data.userbalance.inMoney}</p>
+            <p class="amountofKDV">KDV Miktarı: ${post.data.userbalance.amountVAT}</p>
+            <p class="inWithoutKDV">KDV'siz Alınan: ${post.data.userbalance.inMoneyVAT}</p>
+            <p class="out">Ödenen: ${post.data.userbalance.outMoney}</p>`;
+            document.querySelector("#topInfo").innerHTML = topInfo;
+
+
+            totalAmount = "";
+            totalAmount += `
+            <p class="total">Toplam Bakiye: ${post.data.userbalance.totalMoney}</p>
+            `;
+            document.querySelector("#leftLittleWhite").innerHTML = totalAmount;
+
+
+            sessionStorage.setItem('totalAmount', post.data.userbalance.totalMoney);
+
         });
 
 
@@ -81,7 +110,7 @@ function showData(item) {
 
 // function getUser() {
 //     var cID = sessionStorage.getItem('cID');
-//     var url = `http://192.168.1.152:3000/api/v1/customers/${id}/details/${cID}`;
+//     var url = `http://192.168.1.108:3000/api/v1/customers/${id}/details/${cID}`;
 //     var xhr = new XMLHttpRequest();
 //     xhr.open("GET", url, true);
 //     xhr.onload = function() {

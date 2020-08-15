@@ -53,7 +53,7 @@ function postData() {
 
     //sending notes
     var json = JSON.stringify(data);
-    var url = "http://192.168.1.152:3000/api/v1/notes/add";
+    var url = "http://192.168.1.108:3000/api/v1/notes/add";
     //var url = `http://e3b5dab837cc.ngrok.io/api/v1/notes/add`;
     var xhr = new XMLHttpRequest();
     xhr.open("POST", url, true);
@@ -91,7 +91,7 @@ function getData() {
     var cID = sessionStorage.getItem('cID');
     //console.log(cID);
 
-    var url = `http://192.168.1.152:3000/api/v1/customers/${id}/details/${cID}`;
+    var url = `http://192.168.1.108:3000/api/v1/customers/${id}/details/${cID}`;
     //var url = `http://e3b5dab837cc.ngrok.io/api/v1/customers/${id}/details/${cID}`;
     var xhr = new XMLHttpRequest();
 
@@ -104,7 +104,9 @@ function getData() {
         var arrayCost = array.customerbalance;
         console.log(arrayCost);
 
+        console.log(post);
 
+        let totalAmount = sessionStorage.getItem('totalAmount');
 
 
         div = "";
@@ -128,6 +130,13 @@ function getData() {
 
         document.querySelector("#companyDetail").innerHTML = payment;
 
+        totalAmount = "";
+        totalAmount += `
+            <p class="total">Toplam Bakiye: </p>
+            `;
+        document.querySelector("#leftLittleWhite").innerHTML = totalAmount;
+
+
 
 
     }
@@ -138,7 +147,7 @@ getNotes();
 //GET NOTE
 function getNotes() {
     var cID = sessionStorage.getItem('cID');
-    var url = `http://192.168.1.152:3000/api/v1/customers/${id}/details/${cID}`;
+    var url = `http://192.168.1.108:3000/api/v1/customers/${id}/details/${cID}`;
     //var url = `http: //e3b5dab837cc.ngrok.io/api/v1/customers/${id}/details/${cID}`;
     var xhr = new XMLHttpRequest();
 

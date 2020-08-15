@@ -67,7 +67,7 @@ getOperation();
 function getOperation() {
 
     var cID = sessionStorage.getItem('cID');
-    var url = `http://192.168.1.152:3000/api/v1/customers/${id}/details/${cID}`;
+    var url = `http://192.168.1.108:3000/api/v1/customers/${id}/details/${cID}`;
     var xhr = new XMLHttpRequest();
 
     xhr.open("GET", url, true);
