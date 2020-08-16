@@ -185,9 +185,9 @@ function getInfo() {
 
             topInfo = "";
             topInfo += `
-            <p class="inWithKDV">KDV'li Alınan:  ${post.data.userbalance.inMoney}</p>
+            <p class="inWithKDV">KDV'li Alınan:  ${post.data.userbalance.inMoneyVAT}</p>
             <p class="amountofKDV">KDV Miktarı: ${post.data.userbalance.amountVAT}</p>
-            <p class="inWithoutKDV">KDV'siz Alınan: ${post.data.userbalance.inMoneyVAT}</p>
+            <p class="inWithoutKDV">KDV'siz Alınan: ${post.data.userbalance.inMoney}</p>
             <p class="out">Ödenen: ${post.data.userbalance.outMoney}</p>`;
             document.querySelector("#topInfo").innerHTML = topInfo;
 

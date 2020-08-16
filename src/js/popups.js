@@ -141,7 +141,7 @@ function odemeAlYap(cost,infoKDV,inOrOut,date){
         // var resultpayment = JSON.parse(xhrpayment.response);
         // console.log("resultnotes" , resultpayment);
 
-        window.location.reload();
+        // window.location.reload();
 
     }
     xhrpayment.send(json);
