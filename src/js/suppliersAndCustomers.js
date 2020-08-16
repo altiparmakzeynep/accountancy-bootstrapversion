@@ -106,9 +106,9 @@ function getData() {
 
 
 function showData(item) {
-    var cID = item.id;
-    sessionStorage.setItem("cID", cID);
-    console.log(cID);
+    var custid = item.id;
+    localStorage.setItem("customerid",custid);
+    console.log(custid);
     window.location = "detail.html";
 
 

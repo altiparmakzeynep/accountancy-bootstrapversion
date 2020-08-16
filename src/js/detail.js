@@ -1,79 +1,85 @@
-// Get the modal
-var modal = document.getElementById("myModal");
+// Show Detail
+var userID = localStorage.getItem("id");
+console.log(userID);
+var customerID = localStorage.getItem("customerid");
+console.log(customerID);
 
-// Get the button that opens the modal
-var btn1 = document.getElementById("notesButton");
+// // Get the modal
+// var modal = document.getElementById("myModal");
 
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
-btn1.onclick = function() {
-    modal.style.display = "block";
-}
-
-/*When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
-}*/
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
+// // Get the button that opens the modal
+// var btn1 = document.getElementById("notesButton");
 
 
+// // Get the <span> element that closes the modal
+// var span = document.getElementsByClassName("close")[0];
 
+// // When the user clicks the button, open the modal 
+// btn1.onclick = function() {
+//     modal.style.display = "block";
+// }
 
-//post notes
-var id = localStorage.getItem("id", id);
+// /*When the user clicks on <span> (x), close the modal
+// span.onclick = function() {
+//     modal.style.display = "none";
+// }*/
 
-document.querySelector("#addNoteSaveButton").addEventListener("click", postData);
-//document.querySelector("#addNoteButton").addEventListener("click", getNotes);
+// // When the user clicks anywhere outside of the modal, close it
+// window.onclick = function(event) {
+//     if (event.target == modal) {
+//         modal.style.display = "none";
+//     }
+// }
 
 
 
 
+// //post notes
+// var id = localStorage.getItem("id");
 
-//ADD NOTE
-function postData() {
-    //customer ID from another JS page
-    var cID = sessionStorage.getItem('cID');
-    // console.log(cID);
-
-    const data = {
-        customerID: cID,
-        notes: document.getElementById("writeNote").value,
-        date: document.getElementById("calendar").value,
-
-    }
-
-    //sending notes
-    var json = JSON.stringify(data);
-    var url = "http://192.168.1.108:3000/api/v1/notes/add";
-    //var url = `http://e3b5dab837cc.ngrok.io/api/v1/notes/add`;
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", url, true);
-    xhr.setRequestHeader("Content-type", "application/json; charset=utf-8");
+// document.querySelector("#addNoteSaveButton").addEventListener("click", postData);
+// //document.querySelector("#addNoteButton").addEventListener("click", getNotes);
 
 
-    xhr.onload = function() {
 
-    }
-    xhr.send(json);
 
-    //LOCAL STORAGE
-    // const deneme = localStorage.setItem("cıd", data.customerID);
-    // const notes = localStorage.setItem("notes", data.notes);
-    // const date = localStorage.setItem("date", data.date);
-    // console.log(data.notes);
-    // console.log(data.date);
-    // console.log(deneme);
 
-}
+// //ADD NOTE
+// function postData() {
+//     //customer ID from another JS page
+//     var cID = sessionStorage.getItem('cID');
+//     // console.log(cID);
+
+//     const data = {
+//         customerID: cID,
+//         notes: document.getElementById("writeNote").value,
+//         date: document.getElementById("calendar").value,
+
+//     }
+
+//     //sending notes
+//     var json = JSON.stringify(data);
+//     var url = "http://192.168.1.142:3000/api/v1/notes/add";
+//     //var url = `http://e3b5dab837cc.ngrok.io/api/v1/notes/add`;
+//     var xhr = new XMLHttpRequest();
+//     xhr.open("POST", url, true);
+//     xhr.setRequestHeader("Content-type", "application/json; charset=utf-8");
+
+
+//     xhr.onload = function() {
+
+//     }
+//     xhr.send(json);
+
+//     //LOCAL STORAGE
+//     // const deneme = localStorage.setItem("cıd", data.customerID);
+//     // const notes = localStorage.setItem("notes", data.notes);
+//     // const date = localStorage.setItem("date", data.date);
+//     // console.log(data.notes);
+//     // console.log(data.date);
+//     // console.log(deneme);
+
+// }
 //console.log(localStorage);
 
 var id = localStorage.getItem("id", id);
@@ -82,16 +88,16 @@ var id = localStorage.getItem("id", id);
 getData();
 
 
-//get data
+// get data
 
 
 function getData() {
 
     //customer ID from another JS page
-    var cID = sessionStorage.getItem('cID');
+    // var cID = sessionStorage.getItem('cID');
     //console.log(cID);
 
-    var url = `http://192.168.1.142:3000/api/v1/customers/${id}/details/${cID}`;
+    var url = `http://192.168.1.142:3000/api/v1/customers/${id}/details/${customerID}`;
     //var url = `http://e3b5dab837cc.ngrok.io/api/v1/customers/${id}/details/${cID}`;
     var xhr = new XMLHttpRequest();
 
@@ -143,11 +149,79 @@ function getData() {
     xhr.send();
 }
 
+
+
+function getInfo() {
+    var url = `http://192.168.1.142:3000/api/v1/customers/${id}`;
+    //var url = `http://e3b5dab837cc.ngrok.io/api/v1/customers/${id}`;
+    var xhr = new XMLHttpRequest();
+
+    xhr.open("GET", url, true);
+    xhr.onload = function() {
+
+
+        var post = JSON.parse(this.response);
+        console.log(post);
+        console.log(post.data.customers);
+
+        var array = post.data.customers;
+        console.log(array);
+        // var totalAmount = post.data.userbalance.totalMoney;
+        // console.log(post.data);
+        // console.log(totalAmount);
+
+        console.log(post.data.fullName);
+
+
+
+        array.forEach(function(item) {
+
+            userInfo = "";
+            userInfo += `
+            <p class="nameSurname">${post.data.fullName}</p>
+            <p class="homePageCompanyName">${post.data.companyName}</p>`;
+            document.querySelector("#userInfo").innerHTML = userInfo;
+            console.log(post.data.fullName);
+
+            topInfo = "";
+            topInfo += `
+            <p class="inWithKDV">KDV'li Alınan:  ${post.data.userbalance.inMoney}</p>
+            <p class="amountofKDV">KDV Miktarı: ${post.data.userbalance.amountVAT}</p>
+            <p class="inWithoutKDV">KDV'siz Alınan: ${post.data.userbalance.inMoneyVAT}</p>
+            <p class="out">Ödenen: ${post.data.userbalance.outMoney}</p>`;
+            document.querySelector("#topInfo").innerHTML = topInfo;
+
+
+            totalAmount = "";
+            totalAmount += `
+            <p class="total">Toplam Bakiye: ${post.data.userbalance.totalMoney}</p>
+            `;
+            document.querySelector("#leftLittleWhite").innerHTML = totalAmount;
+
+
+            localStorage.setItem('totalAmount', post.data.userbalance.totalMoney);
+
+        });
+
+
+
+
+
+
+
+
+    }
+    xhr.send();
+}
+getInfo();
+
+
+
 getNotes();
 //GET NOTE
 function getNotes() {
-    var cID = sessionStorage.getItem('cID');
-    var url = `http://192.168.1.142:3000/api/v1/customers/${id}/details/${cID}`;
+    // var cID = sessionStorage.getItem('cID');
+    var url = `http://192.168.1.142:3000/api/v1/customers/${id}/details/${customerID}`;
     //var url = `http: //e3b5dab837cc.ngrok.io/api/v1/customers/${id}/details/${cID}`;
     var xhr = new XMLHttpRequest();
 

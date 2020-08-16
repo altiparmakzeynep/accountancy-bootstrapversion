@@ -1,3 +1,8 @@
+var userID = localStorage.getItem("id");
+console.log(userID);
+var customerID = localStorage.getItem("customerid");
+console.log(customerID);
+
 // Popup Al
 var modal1 = document.getElementById('paymentModal');
 // Kipi açan düğmeyi al

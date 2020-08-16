@@ -25,7 +25,7 @@ function postData() {
             window.location.assign(`customers.html`);
 
             //LOCAL STORAGE
-            const id = localStorage.setItem("id", post.data.id);
+            localStorage.setItem("id", post.data.id);
 
         } else {
             alert("Hatalı Kullanıcı Adı veya Şifre");

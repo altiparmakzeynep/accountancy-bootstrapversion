@@ -16,7 +16,8 @@ function postData(e) {
 
         }}
         console.log(whichCategory);
-        e.preventDefault();
+        localStorage.setItem("category",whichCategory);
+        
 
 
     const data = {
@@ -39,6 +40,7 @@ function postData(e) {
 
 
     xhr.onload = function() {
+        window.location="suppliersAndCustomers.html";
 
     }
 
