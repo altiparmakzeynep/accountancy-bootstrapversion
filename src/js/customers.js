@@ -7,13 +7,13 @@ document.querySelector('.customersDetailButton').addEventListener('click',Custom
 document.querySelector('.suppliersDetailButton').addEventListener('click',Suppliers);
 
 function Customers(){
-    var category = "true";
+    var category = "1";
     localStorage.setItem("category",category);
     // window.location ="suppliersAndCustomersDetail.html"
 }
 
 function Suppliers(){
-    var category = "false";
+    var category = "0";
     localStorage.setItem("category",category);
     // window.location = "suppliersAndCustomersDetail.html"
 }

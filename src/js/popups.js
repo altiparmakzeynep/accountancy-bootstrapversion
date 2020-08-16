@@ -3,7 +3,7 @@ var modal1 = document.getElementById('paymentModal');
 // Kipi açan düğmeyi al
 var btn1 = document.getElementById("payButton");
 // Kipi kapatan <span> öğesini edinin
-var span1 = document.getElementsByClassName("close2")[0];
+var span1 = document.getElementsByClassName("close1")[0];
 // Kullanıcı düğmeyi tıklattığında
 btn1.onclick = function() {
     modal1.style.display = "block";
