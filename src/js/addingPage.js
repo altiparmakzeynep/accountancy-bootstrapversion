@@ -1,4 +1,5 @@
 document.querySelector("#saveButton").addEventListener("click", postData);
+let id = localStorage.getItem("id");
 
 
 
@@ -11,10 +12,10 @@ function postData(e) {
     for(var i = 0; i < Category.length; i++){
         if(Category[i].checked){
             console.log('checked:' + Category[i].value);
-            var isCategory = Category[i].value;
+            var whichCategory = Category[i].value;
 
         }}
-        console.log(isCategory);
+        console.log(whichCategory);
         e.preventDefault();
 
 
@@ -22,6 +23,7 @@ function postData(e) {
         userID: id,
         customerInfo: document.getElementById("companyInput").value,
         customerName: document.getElementById("companyNameInput").value,
+        whichCategory: whichCategory,
         phoneNumber: document.getElementById("numberInput").value,
         taxNumber: document.getElementById("taxNumberInput").value,
         taxAddress: document.getElementById("taxOfficeInput").value
@@ -30,7 +32,7 @@ function postData(e) {
 
 
     var json = JSON.stringify(data);
-    var url = "http://192.168.1.108:3000/api/v1/customers/add";
+    var url = "http://192.168.1.142:3000/api/v1/customers/add";
     var xhr = new XMLHttpRequest();
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-type", "application/json; charset=utf-8");

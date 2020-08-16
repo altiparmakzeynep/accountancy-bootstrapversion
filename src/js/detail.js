@@ -91,7 +91,7 @@ function getData() {
     var cID = sessionStorage.getItem('cID');
     //console.log(cID);
 
-    var url = `http://192.168.1.108:3000/api/v1/customers/${id}/details/${cID}`;
+    var url = `http://192.168.1.142:3000/api/v1/customers/${id}/details/${cID}`;
     //var url = `http://e3b5dab837cc.ngrok.io/api/v1/customers/${id}/details/${cID}`;
     var xhr = new XMLHttpRequest();
 
@@ -147,7 +147,7 @@ getNotes();
 //GET NOTE
 function getNotes() {
     var cID = sessionStorage.getItem('cID');
-    var url = `http://192.168.1.108:3000/api/v1/customers/${id}/details/${cID}`;
+    var url = `http://192.168.1.142:3000/api/v1/customers/${id}/details/${cID}`;
     //var url = `http: //e3b5dab837cc.ngrok.io/api/v1/customers/${id}/details/${cID}`;
     var xhr = new XMLHttpRequest();
 

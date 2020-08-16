@@ -126,7 +126,7 @@ function odemeAlYap(cost,infoKDV,inOrOut,date){
     var json = JSON.stringify(data);
     console.log(json);
 
-    var urlpayment = "http://192.168.1.152:3000/api/v1/payments/add";
+    var urlpayment = "http://192.168.1.142:3000/api/v1/payments/add";
     var xhrpayment = new XMLHttpRequest();
 
     xhrpayment.open('POST',urlpayment,true);
@@ -152,7 +152,7 @@ function deletePaymentsList(item){
     var paymentsid = item.id;
     console.log(paymentsid);
      
-    var urldeletep = `http://192.168.1.152:3000/api/v1/payments/${userID}/delete/${paymentsid}`;
+    var urldeletep = `http://192.168.1.142:3000/api/v1/payments/${userID}/delete/${paymentsid}`;
     var xhrdeletep = new XMLHttpRequest();
 
     xhrdeletep.open('DELETE',urldeletep,true);
@@ -221,7 +221,7 @@ function notEkle(){
     var json = JSON.stringify(data);
     console.log(json);
 
-    var urlnotes = "http://192.168.1.152:3000/api/v1/notes/add";
+    var urlnotes = "http://192.168.1.142:3000/api/v1/notes/add";
     var xhrnotes = new XMLHttpRequest();
 
     xhrnotes.open('POST',urlnotes,true);
@@ -252,7 +252,7 @@ function deleteNotes(item){
     // var id = document.getElementById('customernotes-btn').value;
     // console.log(id);
      
-    var urldeleten = `http://192.168.1.152:3000/api/v1/notes/delete/${noteid}`;
+    var urldeleten = `http://192.168.1.142:3000/api/v1/notes/delete/${noteid}`;
     var xhrdeleten = new XMLHttpRequest();
 
     xhrdeleten.open('DELETE',urldeleten,true);

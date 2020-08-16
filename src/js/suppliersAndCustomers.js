@@ -57,7 +57,7 @@ function getData() {
                     <p class="companyName">Şirket ünvanı: ${array[i].customerInfo}</p>
                   
                     <div class="deleteCustomer">
-                        <button class="deleteButton" ><img src=" ./assets/img/delete.png " width="9" height="9"></button>
+                        <button class="deleteButton" id = "${array[i].id}"  onClick="deleteData(this)"><img src=" ./assets/img/delete.png " width="9" height="9"></button>
                     </div>
                 </button>`;
 
@@ -67,29 +67,29 @@ function getData() {
                 document.querySelector("#rightBackground").innerHTML = div;
             }
 
-        //     userInfo = "";
-        //     userInfo += `
-        //     <p class="nameSurname">${post.data.fullName}</p>
-        //     <p class="homePageCompanyName">${post.data.companyName}</p>`;
-        //     document.querySelector("#userInfo").innerHTML = userInfo;
+            userInfo = "";
+            userInfo += `
+            <p class="nameSurname">${post.data.fullName}</p>
+            <p class="homePageCompanyName">${post.data.companyName}</p>`;
+            document.querySelector("#userInfo").innerHTML = userInfo;
 
-        //     topInfo = "";
-        //     topInfo += `
-        //     <p class="inWithKDV">KDV'li Alınan:  ${post.data.userbalance.inMoney}</p>
-        //     <p class="amountofKDV">KDV Miktarı: ${post.data.userbalance.amountVAT}</p>
-        //     <p class="inWithoutKDV">KDV'siz Alınan: ${post.data.userbalance.inMoneyVAT}</p>
-        //     <p class="out">Ödenen: ${post.data.userbalance.outMoney}</p>`;
-        //     document.querySelector("#topInfo").innerHTML = topInfo;
-
-
-        //     totalAmount = "";
-        //     totalAmount += `
-        //     <p class="total">Toplam Bakiye: ${post.data.userbalance.totalMoney}</p>
-        //     `;
-        //     document.querySelector("#leftLittleWhite").innerHTML = totalAmount;
+            topInfo = "";
+            topInfo += `
+            <p class="inWithKDV">KDV'li Alınan:  ${post.data.userbalance.inMoney}</p>
+            <p class="amountofKDV">KDV Miktarı: ${post.data.userbalance.amountVAT}</p>
+            <p class="inWithoutKDV">KDV'siz Alınan: ${post.data.userbalance.inMoneyVAT}</p>
+            <p class="out">Ödenen: ${post.data.userbalance.outMoney}</p>`;
+            document.querySelector("#topInfo").innerHTML = topInfo;
 
 
-        //     sessionStorage.setItem('totalAmount', post.data.userbalance.totalMoney);
+            totalAmount = "";
+            totalAmount += `
+            <p class="total">Toplam Bakiye: ${post.data.userbalance.totalMoney}</p>
+            `;
+            document.querySelector("#leftLittleWhite").innerHTML = totalAmount;
+
+
+            localStorage.setItem('totalAmount', post.data.userbalance.totalMoney);
 
         });
 
@@ -105,21 +105,45 @@ function getData() {
 }
 
 
-// function showData(item) {
-//     var cID = item.id;
-//     sessionStorage.setItem("cID", cID);
-//     console.log(cID);
-//     window.location = "detail.html";
+function showData(item) {
+    var cID = item.id;
+    sessionStorage.setItem("cID", cID);
+    console.log(cID);
+    window.location = "detail.html";
 
 
-// }
+}
+
+//DELETİNG DATA
+        
+function deleteData(item){
+    //Find customer id
+    var customerid = item.id;
+    console.log(customerid);
+  
+    // Delete POST
+    var urldelete = `http://192.168.1.142:3000/api/v1/customers/delete/${customerid}`
+    console.log(urldelete);
+    var xhrdelete = new XMLHttpRequest();
+    xhrdelete.open('DELETE',urldelete,true);
+    xhrdelete.setRequestHeader('Content-type','application/json; charset=UTF-8');
+   
+   
+    xhrdelete.onload = function(){
+      var result = JSON.parse(xhrdelete.response);
+      console.log(result);
+      window.location.reload();
+    }
+    xhrdelete.send();
+  
+  }
 
 
 // getUser();
 
 // function getUser() {
 //     var cID = sessionStorage.getItem('cID');
-//     var url = `http://192.168.1.108:3000/api/v1/customers/${id}/details/${cID}`;
+//     var url = `http://192.168.1.142:3000/api/v1/customers/${id}/details/${cID}`;
 //     var xhr = new XMLHttpRequest();
 //     xhr.open("GET", url, true);
 //     xhr.onload = function() {

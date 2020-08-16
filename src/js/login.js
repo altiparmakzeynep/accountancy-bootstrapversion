@@ -11,7 +11,7 @@ function postData() {
 
     var json = JSON.stringify(data);
 
-    var url = "http://192.168.1.108:3000/api/v1/users/login";
+    var url = "http://192.168.1.142:3000/api/v1/users/login";
     //var url = "http://e3b5dab837cc.ngrok.io/api/v1/users/login";
     var xhr = new XMLHttpRequest();
     xhr.open("POST", url, true);
