@@ -192,7 +192,7 @@
 
 .taxOffice {
     position: absolute;
-    bottom:30%;
+    bottom:27%;
     margin-left: 11%;
 }
 
@@ -350,4 +350,6 @@
     position: absolute;
     bottom: 8%;
     margin-left: 10.5%;
+    font-family: 'Montserrat', sans-serif;
+
 }

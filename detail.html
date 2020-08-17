@@ -1,4 +1,3 @@
- 
 <!doctype html>
 <html lang="en">
 
@@ -13,6 +12,13 @@
     <link rel="stylesheet" href="./src/css/detail.css">
     <link rel="stylesheet" href="./src/css/payment.css">
     <link rel="stylesheet" href="./src/css/getpaid.css">
+    <link rel="stylesheet" href="./src/css/popup.css">
+
+
+
+
+
+
 
     <title>at muhasebe</title>
 </head>
@@ -32,8 +38,10 @@
                     <div class="leftInBackground" id="leftInBackground">
                         <hr class="hr">
                         <div class="photo"></div>
+                        <div class="userInfo" id="userInfo">
                         <!-- <p class="nameSurname"></p>
                         <p class="homePageCompanyName"></p> -->
+                        </div>
                         <div class="leftBigWhite">
                             <div class="topInfo" id="topInfo">
                                 <!-- <p class="inWithKDV">KDV'li Alınan:</p>
@@ -94,16 +102,16 @@
                                 <div class="modal-content">
                                     <span class="close2">&times;</span>
                                     <h6>Ödeme Al</h6>
-                                   
+
                                     <div class="paymentAmount">
                                         <p>Ödeme tutarı</p>
-                                        <input type="text" class="paymentArea"id="odemetutari-odemeal">
+                                        <input type="text" id="odemetutari-odemeal">
                                     </div>
 
 
                                     <label class="radioLabel">
                                         <input type="radio" class="radio2" value="false" name="radio2">KDV'Lİ
-                                 </label>
+                                    </label>
 
                                     <label class="radioLabel">
                                             <input type="radio" class="radio2" value="false" name="radio2">KDV'SİZ
@@ -124,6 +132,7 @@
                                 <div class="modal-content">
                                     <span class="close1">&times;</span>
                                     <h6>Ödeme Yap</h6>
+                                    <!-- <input type="text" class="writeNote" id="writeNote"> -->
                                     <input type="text" class="paymentAmount" id="paymentAmount">
                                     <div class="paymentDate">
                                         <input type="date" class="paymentCalendar" id="paymentCalendar">
