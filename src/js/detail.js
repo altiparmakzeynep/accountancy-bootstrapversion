@@ -3,6 +3,7 @@ var userID = localStorage.getItem("id");
 console.log(userID);
 var customerID = localStorage.getItem("customerid");
 console.log(customerID);
+var baseurl ="https://accountancy-app-api.herokuapp.com/api/v1";
 
 // // Get the modal
 // var modal = document.getElementById("myModal");
@@ -97,7 +98,7 @@ function getData() {
     // var cID = sessionStorage.getItem('cID');
     //console.log(cID);
 
-    var url = `http://192.168.1.142:3000/api/v1/customers/${id}/details/${customerID}`;
+    var url = `${baseurl}/customers/${id}/details/${customerID}`;
     //var url = `http://e3b5dab837cc.ngrok.io/api/v1/customers/${id}/details/${cID}`;
     var xhr = new XMLHttpRequest();
 
@@ -179,7 +180,7 @@ function getData() {
 
 
 function getInfo() {
-    var url = `http://192.168.1.142:3000/api/v1/customers/${id}`;
+    var url = `${baseurl}/customers/${id}`;
     //var url = `http://e3b5dab837cc.ngrok.io/api/v1/customers/${id}`;
     var xhr = new XMLHttpRequest();
 
@@ -248,7 +249,7 @@ getNotes();
 //GET NOTE
 function getNotes() {
     // var cID = sessionStorage.getItem('cID');
-    var url = `http://192.168.1.142:3000/api/v1/customers/${id}/details/${customerID}`;
+    var url = `${baseurl}/customers/${id}/details/${customerID}`;
     //var url = `http: //e3b5dab837cc.ngrok.io/api/v1/customers/${id}/details/${cID}`;
     var xhr = new XMLHttpRequest();
 

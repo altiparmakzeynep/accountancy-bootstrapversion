@@ -1,5 +1,49 @@
+// var users = [
+
+//     //BURAYA DATADAN MUSTERİLER GELECEK
+//     'Goku',
+//     'Naruto',
+//     'Ichigo',
+//     'Flash',
+//     'Batman',
+//     'Sherlock Holmes',
+//     'Khaleesi',
+//     'Steve Fox'
+//   ];
+
+//   ul = document.getElementById("customers-list");
+
+//   var render_lists = function(lists){
+//     var li = "";
+//     for(index in lists){
+//       li += "<li>" + lists[index] + "</li>";
+//     }
+//     ul.innerHTML = li;
+//   }
+
+//   render_lists(users);
+
+//   // lets filters it
+//   input = document.getElementById('filter_customers');
+
+//   var filterUsers = function(event){
+//     keyword = input.value.toLowerCase();
+//     filtered_users = users.filter(function(user){
+//           user = user.toLowerCase();
+//          return user.indexOf(keyword) > -1; 
+//     });
+
+//     render_lists(filtered_users);
+//   }
+
+//   input.addEventListener('keyup', filterUsers);
+
+
+
+
 var id = localStorage.getItem("id", id);
 var category = localStorage.getItem("category", category);
+var baseurl = "https://accountancy-app-api.herokuapp.com/api/v1";
 
 
 getData();
@@ -7,12 +51,12 @@ getData();
 
 
 function getData() {
-    var url = `http://192.168.1.142:3000/api/v1/customers/${id}`;
+    var url = `${baseurl}/customers/${id}`;
     //var url = `http://e3b5dab837cc.ngrok.io/api/v1/customers/${id}`;
     var xhr = new XMLHttpRequest();
 
     xhr.open("GET", url, true);
-    xhr.onload = function() {
+    xhr.onload = function () {
 
 
         var post = JSON.parse(this.response);
@@ -32,13 +76,15 @@ function getData() {
 
         document.getElementById('rightBackground').appendChild(ul);
 
-        array.forEach(function(item) {
+        array.forEach(function (item) {
             let div = document.createElement('div');
             div.classList = "customers";
 
             ul.appendChild(div);
             div = "";
             console.log("category", category);
+
+            var users1 = [];
 
 
             // FOR LOOP
@@ -48,24 +94,29 @@ function getData() {
                 console.log("category", category);
 
 
-                if(post.data.customers[i].whichCategory ==  category  ){
-                    //Every buttons have own id from customers array
-                    console.log(post.data.customers[i].whichCategory);
-                div += `
-                <button class="customers" id = "${array[i].id}" onclick="showData(this)">
-                    <p class="companyName">Şirket adı: ${array[i].customerName}</p>
-                    <p class="companyName">Şirket ünvanı: ${array[i].customerInfo}</p>
-                  
-                    <div class="deleteCustomer">
-                        <button class="deleteButton" id = "${array[i].id}"  onClick="deleteData(this)"><img src=" ./assets/img/delete.png " width="9" height="9"></button>
-                    </div>
-                </button>`;
+                // if(post.data.customers[i].whichCategory ==  category  ){
+                //     //Every buttons have own id from customers array
+                //     console.log(post.data.customers[i].whichCategory);
+                // div += `
+                // <button class="customers" id = "${array[i].id}" onclick="showData(this)">
+                //     <p class="companyName">Şirket adı: ${array[i].customerName}</p>
+                //     <p class="companyName">Şirket ünvanı: ${array[i].customerInfo}</p>
 
-                //div.innerHTML += array[i].customerName;
-                }
-                
-                document.querySelector("#rightBackground").innerHTML = div;
+                //     <div class="deleteCustomer">
+                //         <button class="deleteButton" id = "${array[i].id}"  onClick="deleteData(this)"><img src=" ./assets/img/delete.png " width="9" height="9"></button>
+                //     </div>
+                // </button>`;
+
+                // //div.innerHTML += array[i].customerName;
+                // }
+                // users1 += `
+                // '${array[i].customerName}'`;
+
+                // document.querySelector("#rightBackground").innerHTML = div;
             }
+            // localStorage.setItem("users1", users1);
+
+
 
             userInfo = "";
             userInfo += `
@@ -92,7 +143,49 @@ function getData() {
             localStorage.setItem('totalAmount', post.data.userbalance.totalMoney);
 
         });
+        // var users = localStorage.getItem("users1");
 
+        // console.log(users);
+        var users = [
+
+            //BURAYA DATADAN MUSTERİLER GELECEK
+            'Goku',
+            'Naruto',
+            'Ichigo',
+            'Flash',
+            'Batman',
+            'Sherlock Holmes',
+            'Khaleesi',
+            'Steve Fox'
+        ];
+
+        
+        ul = document.getElementById("customers-list");
+
+        var render_lists = function(lists){
+          var li = "";
+          for(index in lists){
+            li += "<li>" + lists[index] + "</li>";
+          }
+          ul.innerHTML = li;
+        }
+      
+        render_lists(users);
+      
+        // lets filters it
+        input = document.getElementById('filter_customers');
+      
+        var filterUsers = function(event){
+          keyword = input.value.toLowerCase();
+          filtered_users = users.filter(function(user){
+                user = user.toLowerCase();
+               return user.indexOf(keyword) > -1; 
+          });
+      
+          render_lists(filtered_users);
+        }
+      
+        input.addEventListener('keyup', filterUsers);
 
 
 
@@ -107,7 +200,7 @@ function getData() {
 
 function showData(item) {
     var custid = item.id;
-    localStorage.setItem("customerid",custid);
+    localStorage.setItem("customerid", custid);
     console.log(custid);
     window.location = "detail.html";
 
@@ -115,28 +208,28 @@ function showData(item) {
 }
 
 //DELETİNG DATA
-        
-function deleteData(item){
+
+function deleteData(item) {
     //Find customer id
     var customerid = item.id;
     console.log(customerid);
-  
+
     // Delete POST
-    var urldelete = `http://192.168.1.142:3000/api/v1/customers/delete/${customerid}`
+    var urldelete = `${baseurl}/customers/delete/${customerid}`
     console.log(urldelete);
     var xhrdelete = new XMLHttpRequest();
-    xhrdelete.open('DELETE',urldelete,true);
-    xhrdelete.setRequestHeader('Content-type','application/json; charset=UTF-8');
-   
-   
-    xhrdelete.onload = function(){
-      var result = JSON.parse(xhrdelete.response);
-      console.log(result);
-      window.location.reload();
+    xhrdelete.open('DELETE', urldelete, true);
+    xhrdelete.setRequestHeader('Content-type', 'application/json; charset=UTF-8');
+
+
+    xhrdelete.onload = function () {
+        var result = JSON.parse(xhrdelete.response);
+        console.log(result);
+        window.location.reload();
     }
     xhrdelete.send();
-  
-  }
+
+}
 
 
 // getUser();
