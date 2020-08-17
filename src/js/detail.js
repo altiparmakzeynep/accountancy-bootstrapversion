@@ -109,6 +109,8 @@ function getData() {
         console.log(array);
         var arrayCost = array.customerbalance;
         console.log(arrayCost);
+        var arrayPayment = post.customer.payments;
+        console.log(arrayPayment);
 
         console.log(post);
 
@@ -141,6 +143,31 @@ function getData() {
             <p class="total">Toplam Bakiye: </p>
             `;
         document.querySelector("#leftLittleWhite").innerHTML = totalAmount;
+
+
+        divpayment = "";
+        for (var j = 0; j < arrayPayment.length; j++) {
+            if(arrayPayment[j].inOrOut == false){
+                var date = arrayPayment[j].date;
+                var a = date.slice(0,10);
+                divpayment += `
+                    <div>
+                     <button class="customerpayments-btn" id="${post.customer.payments[i].id}" onClick="deletePaymentsList(this)"></button>
+                     <p class="historyTexts"> -${arrayPayment[j].cost}£  -  ${a}</p>
+                    </div>
+                    `;
+            }else{
+                var date = arrayPayment[j].date;
+                var a = date.slice(0,10);
+                divpayment += `
+                    <div>
+                     <button class="customerpayments-btn" id="${post.customer.payments[i].id}" onClick="deletePaymentsList(this)"></button>
+                     <p class="historyTexts"> -${arrayPayment[j].cost}£  -  ${a}</p>
+                     </div>
+                    `;
+            }
+            document.querySelector("#history").innerHTML = divpayment;
+        }
 
 
 
