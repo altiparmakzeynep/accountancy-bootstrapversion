@@ -40,7 +40,7 @@
     position: absolute;
     width: 80%;
     height: 20%;
-    margin-top: 20%;
+    top: 10%;
     margin-left: 9.5%;
     border: none;
     background-color: #d2d3d5;
@@ -54,7 +54,7 @@
     border: none;
     height: 15%;
     width: 80%;
-    bottom: 25%;
+    bottom: 30%;
     margin-left: 10%;
     position: absolute;
 }
@@ -79,4 +79,14 @@
     margin-bottom: 5%;
     position: relative;
     color: white;
+}
+#odemetutari-odemeal{
+    border:none;
+    position: absolute;
+    background-color:#d2d2d5;
+    left:0;
+    width: 100%;
+    border-radius:8px;
+    height: 100%;
+    bottom: 0%;
 }

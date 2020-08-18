@@ -1,45 +1,45 @@
-.form {
-    position: absolute;
-    background: #ffffff;
-    width: 40%;
-    margin: 0 auto 100px;
-    text-align: center;
-    color: #282425;
-    max-height: 100%;
-    top: 20%;
-    left: 28%;
-    font-weight: 900;
-    /* font-family: 'Montserrat'; */
-}
-
-.loginTitle {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-}
-
-.form input {
-    background: #f2f2f2;
-    width: 100%;
-    vertical-align: middle;
-    border: 0;
-    margin: 0 0 15px;
-    padding: 12px;
-    font-size: 14px;
-    border-radius: 15px;
-    text-align: center;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-}
-
-.form button {
-    background: #282425;
-    width: 100%;
-    border: 0;
-    padding: 12px;
-    color: #FEFEFE;
-    font-size: 14px;
-    border-radius: 30px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    margin-left:4%;
-}
+        .form {
+            position: absolute;
+            background: #ffffff;
+            width: 40%;
+            margin: 0 auto 100px;
+            text-align: center;
+            color: #282425;
+            max-height: 100%;
+            top: 20%;
+            left: 28%;
+            font-weight: 900;
+            /* font-family: 'Montserrat'; */
+        }
+        
+        .loginTitle {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+        
+        .form input {
+            background: #f2f2f2;
+            width: 100%;
+            vertical-align: middle;
+            border: 0;
+            margin: 0 0 15px;
+            padding: 12px;
+            font-size: 14px;
+            border-radius: 15px;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+        }
+        
+        .form button {
+            background: #282425;
+            width: 100%;
+            border: 0;
+            padding: 12px;
+            color: #FEFEFE;
+            font-size: 14px;
+            border-radius: 30px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            margin-left:4%;
+        }

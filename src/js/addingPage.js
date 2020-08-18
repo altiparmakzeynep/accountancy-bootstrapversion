@@ -1,5 +1,6 @@
 document.querySelector("#saveButton").addEventListener("click", postData);
 let id = localStorage.getItem("id");
+var baseurl ="https://accountancy-app-api.herokuapp.com/api/v1";
 
 
 
@@ -33,7 +34,7 @@ function postData(e) {
 
 
     var json = JSON.stringify(data);
-    var url = "http://192.168.1.142:3000/api/v1/customers/add";
+    var url = `${baseurl}/customers/add`;
     var xhr = new XMLHttpRequest();
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-type", "application/json; charset=utf-8");

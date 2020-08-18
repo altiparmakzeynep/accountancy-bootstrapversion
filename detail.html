@@ -13,14 +13,7 @@
     <link rel="stylesheet" href="./src/css/payment.css">
     <link rel="stylesheet" href="./src/css/getpaid.css">
     <link rel="stylesheet" href="./src/css/popup.css">
-
-
-
-
-
-
-
-    <title>at muhasebe</title>
+    <title>PXR Muhasebe</title>
 </head>
 
 <body>
@@ -85,7 +78,7 @@
                                 <div class="modal-content">
 
                                     <span class="close3">&times;</span>
-                                    <h6>Not Ekle</h6>
+                                    <h6 class="addNoteHeader">Not Ekle</h6>
 
                                     <input type="text" class="writeNote" id="writeNote">
 
@@ -104,18 +97,25 @@
                                     <h6>Ödeme Al</h6>
 
                                     <div class="paymentAmount">
-                                        <p>Ödeme tutarı</p>
+                                        <!-- <p>Ödeme tutarı</p> -->
                                         <input type="text" id="odemetutari-odemeal">
                                     </div>
 
 
-                                    <label class="radioLabel">
+                                    <!-- <label class="radioLabel">
                                         <input type="radio" class="radio2" value="false" name="radio2">KDV'Lİ
                                     </label>
 
                                     <label class="radioLabel">
                                             <input type="radio" class="radio2" value="false" name="radio2">KDV'SİZ
-                                    </label>
+                                    </label> -->
+
+                            <div class="vatButtons"> 
+                                <input type="radio" id="customerRadioBtn" name="customerAndSupplierRadioBtn" value="1">
+                                <label for="customerRadioBtn">KDV'li</label><br>
+                                <input type="radio" id="supplierRadioBtn" name="customerAndSupplierRadioBtn" value="0">
+                                <label for="supplierRadioBtn">KDV'siz</label><br>
+                                </div>
 
 
                                     <div class="getpaidDate">

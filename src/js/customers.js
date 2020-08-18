@@ -1,4 +1,5 @@
 var id = localStorage.getItem("id", id);
+var baseurl ="https://accountancy-app-api.herokuapp.com/api/v1";
 
 
 
@@ -21,7 +22,7 @@ function Suppliers(){
 getData();
 
 function getData() {
-    var url = `http://192.168.1.142:3000/api/v1/customers/${id}`;
+    var url = `${baseurl}/customers/${id}`;
     //var url = `http://e3b5dab837cc.ngrok.io/api/v1/customers/${id}`;
     var xhr = new XMLHttpRequest();
 
@@ -71,13 +72,6 @@ function getData() {
             localStorage.setItem('totalAmount', post.data.userbalance.totalMoney);
 
         });
-
-
-
-
-
-
-
 
     }
     xhr.send();

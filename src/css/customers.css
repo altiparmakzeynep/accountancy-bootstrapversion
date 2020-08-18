@@ -139,7 +139,7 @@
 .nameSurname {
     position: fixed;
     margin-top: 7.5%;
-    margin-left: 3.5%;
+    margin-left: 5.5%;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
 }
@@ -147,7 +147,7 @@
 .homePageCompanyName {
     position: fixed;
     margin-top: 11%;
-    margin-left: 4.5%;
+    margin-left: 3.5%;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
 }
@@ -201,8 +201,7 @@
     background: none;
     float: right;
     margin-top: 4%;
-    position: absolute;
-    margin-right: 19%;
+    margin-right: 0%;
 }
 
 .companyName {
@@ -228,7 +227,6 @@
     left:20%;
     width: 30%;
     height: 8%;
-    font-family: 'Montserrat', sans-serif;
 }
 
 /* .suppliersDetailContent{
@@ -244,7 +242,6 @@
     margin-top:20%;
     width: 30%;
     height: 8%;
-    font-family: 'Montserrat', sans-serif;
 }
 .form-inline {
     left:30%;
@@ -270,4 +267,23 @@
     padding:10px;
     margin:5px 0;
     border: 1px solid #e4e4e4;
+  }
+  .searchBox{
+      margin-top:1%;
+      position: absolute;
+      z-index:2 ;
+      margin-left:8% ;
+      width: 75%;
+  }
+  .yeterButton{
+    border: none;
+    background-color:#d2d2d5;
+    float: right;
+    /* margin-top: 2%;
+    margin-right: 2%; */
+    /* width: 5%;
+    height: 15%; */
+    border-radius: 4px;
+
+ 
   }

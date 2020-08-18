@@ -3,6 +3,7 @@ var userID = localStorage.getItem("id");
 console.log(userID);
 var customerID = localStorage.getItem("customerid");
 console.log(customerID);
+var baseurl ="https://accountancy-app-api.herokuapp.com/api/v1";
 
 // // Get the modal
 // var modal = document.getElementById("myModal");
@@ -97,7 +98,7 @@ function getData() {
     // var cID = sessionStorage.getItem('cID');
     //console.log(cID);
 
-    var url = `http://192.168.1.142:3000/api/v1/customers/${id}/details/${customerID}`;
+    var url = `${baseurl}/customers/${id}/details/${customerID}`;
     //var url = `http://e3b5dab837cc.ngrok.io/api/v1/customers/${id}/details/${cID}`;
     var xhr = new XMLHttpRequest();
 
@@ -152,8 +153,8 @@ function getData() {
                 var a = date.slice(0,10);
                 divpayment += `
                     <div>
-                     <button class="customerpayments-btn" id="${post.customer.payments[i].id}" onClick="deletePaymentsList(this)"></button>
-                     <p class="historyTexts"> -${arrayPayment[j].cost}£  -  ${a}</p>
+                     <button class="customerpayments-btn" id="${post.customer.payments[j].id}" onClick="deletePaymentsList(this)"></button>
+                     <p class="historyTexts"> - ${arrayPayment[j].cost}£  -  ${a}</p>
                     </div>
                     `;
             }else{
@@ -161,8 +162,8 @@ function getData() {
                 var a = date.slice(0,10);
                 divpayment += `
                     <div>
-                     <button class="customerpayments-btn" id="${post.customer.payments[i].id}" onClick="deletePaymentsList(this)"></button>
-                     <p class="historyTexts"> -${arrayPayment[j].cost}£  -  ${a}</p>
+                     <button class="customerpayments-btn" id="${post.customer.payments[j].id}" onClick="deletePaymentsList(this)"> </button>
+                     <p class="historyTexts"> + ${arrayPayment[j].cost}£  -  ${a}</p>
                      </div>
                     `;
             }
@@ -179,7 +180,7 @@ function getData() {
 
 
 function getInfo() {
-    var url = `http://192.168.1.142:3000/api/v1/customers/${id}`;
+    var url = `${baseurl}/customers/${id}`;
     //var url = `http://e3b5dab837cc.ngrok.io/api/v1/customers/${id}`;
     var xhr = new XMLHttpRequest();
 
@@ -229,14 +230,6 @@ function getInfo() {
             localStorage.setItem('totalAmount', post.data.userbalance.totalMoney);
 
         });
-
-
-
-
-
-
-
-
     }
     xhr.send();
 }
@@ -248,7 +241,7 @@ getNotes();
 //GET NOTE
 function getNotes() {
     // var cID = sessionStorage.getItem('cID');
-    var url = `http://192.168.1.142:3000/api/v1/customers/${id}/details/${customerID}`;
+    var url = `${baseurl}/customers/${id}/details/${customerID}`;
     //var url = `http: //e3b5dab837cc.ngrok.io/api/v1/customers/${id}/details/${cID}`;
     var xhr = new XMLHttpRequest();
 
@@ -265,8 +258,9 @@ function getNotes() {
         for (var n = 0; n < arrayNotes.length; n++) {
             console.log(array.notes[n].notes);
             div += `
-        <p>${arrayNotes[n].notes}</p>
-       `;
+            <button class="customernotes-btn"  id="${arrayNotes[n].id}" onClick="deleteNotes(this)"><img src=" ./assets/img/delete.png " width="9" height="9"></button>
+             <p>${arrayNotes[n].notes}</p>
+            `;
 
             document.querySelector("#notes").innerHTML = div;
         }

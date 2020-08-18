@@ -1,312 +1,225 @@
-var users = [
+// var users = [
 
-  //BURAYA DATADAN MUSTERİLER GELECEK
-  'Goku',
-  'Naruto',
-  'Ichigo',
-  'Flash',
-  'Batman',
-  'Sherlock Holmes',
-  'Khaleesi',
-  'Steve Fox'
-];
+//     //BURAYA DATADAN MUSTERİLER GELECEK
+//     'Goku',
+//     'Naruto',
+//     'Ichigo',
+//     'Flash',
+//     'Batman',
+//     'Sherlock Holmes',
+//     'Khaleesi',
+//     'Steve Fox'
+//   ];
 
-ul = document.getElementById("customers-list");
+//   ul = document.getElementById("customers-list");
 
-var render_lists = function(lists){
-  var li = "";
-  for(index in lists){
-    li += "<li>" + lists[index] + "</li>";
-  }
-  ul.innerHTML = li;
-}
+//   var render_lists = function(lists){
+//     var li = "";
+//     for(index in lists){
+//       li += "<li>" + lists[index] + "</li>";
+//     }
+//     ul.innerHTML = li;
+//   }
 
-render_lists(users);
+//   render_lists(users);
 
-// lets filters it
-input = document.getElementById('filter_customers');
+//   // lets filters it
+//   input = document.getElementById('filter_customers');
 
-var filterUsers = function(event){
-  keyword = input.value.toLowerCase();
-  filtered_users = users.filter(function(user){
-        user = user.toLowerCase();
-       return user.indexOf(keyword) > -1; 
-  });
-  
-  render_lists(filtered_users);
-}
+//   var filterUsers = function(event){
+//     keyword = input.value.toLowerCase();
+//     filtered_users = users.filter(function(user){
+//           user = user.toLowerCase();
+//          return user.indexOf(keyword) > -1; 
+//     });
 
-input.addEventListener('keyup', filterUsers);
+//     render_lists(filtered_users);
+//   }
 
-
-var userID = localStorage.getItem("id");
-console.log(userID);
-var customerID = localStorage.getItem("customerid");
-console.log(customerID);
-
-// Popup Al
-var modal1 = document.getElementById('paymentModal');
-// Kipi açan düğmeyi al
-var btn1 = document.getElementById("payButton");
-// Kipi kapatan <span> öğesini edinin
-var span1 = document.getElementsByClassName("close1")[0];
-// Kullanıcı düğmeyi tıklattığında
-btn1.onclick = function() {
-    modal1.style.display = "block";
-}
-// Kullanıcı <span> (x) düğmesini tıkladığında, popup
-span1.onclick = function() {
-    modal1.style.display = "none";
-}
-// Kullanıcı modelden başka herhangi bir yeri tıklattıysa, onu kapatın.
-window.onclick = function(event) {
-    if (event.target == modal1) {
-        modal1.style.display = "none";
-    }
-}
-
-
-document.querySelector('.paymentSaveButton').addEventListener('click',odemeYap);
-
-
-function odemeYap(){
-    var cost = parseInt(document.getElementById('paymentAmount').value);
-    var date = document.getElementById('paymentCalendar').value;
-    // var VAT2 = document.getElementsByName('radio1');
-    var inOrOut = "0";
-    var infoKDV = "false";
-    
-    // console.log(VAT.values());
-
-    // for(var i = 0; i < VAT2.length; i++){
-    //     if(VAT2[i].checked){
-    //         // console.log('checked:' + VAT2[i].value);
-    //         var infoKDV = VAT2[i].value;
-
-    //     }}
-
-    console.log(cost);
-    console.log(date);
-    console.log(infoKDV);
-
-    odemeAlYap(cost,infoKDV,inOrOut,date);
-
-}
+//   input.addEventListener('keyup', filterUsers);
 
 
 
 
-//2.popup
-
-// Popup Al
-var modal2 = document.getElementById('getpaidModal');
-// Kipi açan düğmeyi al
-var btn2 = document.getElementById("getPaidButton");
-// Kipi kapatan <span> öğesini edinin
-var span2 = document.getElementsByClassName("close2")[0];
-// Kullanıcı düğmeyi tıklattığında
-btn2.onclick = function() {
-    modal2.style.display = "block";
-}
-// Kullanıcı <span> (x) düğmesini tıkladığında, popup
-span2.onclick = function() {
-    modal2.style.display = "none";
-}
-// Kullanıcı modelden başka herhangi bir yeri tıklattıysa, onu kapatın.
-window.onclick = function(event) {
-    if (event.target == modal2) {
-        modal2.style.display = "none";
-    }
-}
-
-document.querySelector('.getpaidSaveButton').addEventListener('click',odemeAl);
+var id = localStorage.getItem("id", id);
+var category = localStorage.getItem("category", category);
+var baseurl = "https://accountancy-app-api.herokuapp.com/api/v1";
 
 
-function odemeAl(){
-    var cost = parseInt(document.getElementById('odemetutari-odemeal').value);
-    var date = document.getElementById('getpaidCalendar').value;
-    var VAT1 = document.getElementsByName('radio2');
-    var inOrOut = "1";
+getData();
 
+
+
+function getData() {
+    var url = `${baseurl}/customers/${id}`;
+    //var url = `http://e3b5dab837cc.ngrok.io/api/v1/customers/${id}`;
+    var xhr = new XMLHttpRequest();
+
+    xhr.open("GET", url, true);
+    xhr.onload = function () {
+
+
+        var post = JSON.parse(this.response);
+        console.log(post);
+        console.log(post.data.customers);
+
+        var array = post.data.customers;
+
+        var customerFiltered = post.data.customers.filter((item) => item.whichCategory == 1)
+        var supplierFiltered = post.data.customers.filter((item) => item.whichCategory == 0)
+        console.log("customerFiltered", customerFiltered)
+        // var totalAmount = post.data.userbalance.totalMoney;
+        // console.log(post.data);
+        // console.log(totalAmount);
+
+
+
+        ul = document.createElement('ul');
+
+
+        document.getElementById('rightBackground').appendChild(ul);
+
+        array.forEach(function (item) {
+            let div = document.createElement('div');
+            div.classList = "customers";
+
+            ul.appendChild(div);
+            div = "";
+
+         
+            // FOR LOOP
+            // if(category == "1") {
+            //     for (var i = 0; i < customerFiltered.length; i++) {
+            //         // console.log(array[i].whichCategory);
+            //         // var category = localStorage.getItem("category", category);
     
     
-    // console.log(VAT.values());
+            //             //Every buttons have own id from customers array
+            //         div += `
+            //         <button class="customers" id = " aaaaaa${customerFiltered[i].id}" onclick="showData(this)">
+            //             <p class="companyName">Şirket adı: ${customerFiltered[i].customerName}</p>
+            //             <p class="companyName">Şirket ünvanı: ${customerFiltered[i].customerInfo}</p>
+    
+            //             <div class="deleteCustomer">
+            //                 <button class="deleteButton" id = "${customerFiltered[i].id}"  onClick="deleteData(this)"><img src=" ./assets/img/delete.png " width="9" height="9"></button>
+            //             </div>
+            //         </button>`;
+    
+            //         div.innerHTML += customerFiltered[i].customerName;
+    
+            //         document.querySelector("#rightBackground").innerHTML = div;
+            //     }
+    
+            // } else {
+            //     for (var i = 0; i < supplierFiltered.length; i++) {
+            //         // console.log(array[i].whichCategory);
+            //         // var category = localStorage.getItem("category", category);
+    
+    
+            //             //Every buttons have own id from customers array
+            //         div += `
+            //         <button class="customers" id = "${supplierFiltered[i].id}" onclick="showData(this)">
+            //             <p class="companyName">Şirket adı: ${supplierFiltered[i].customerName}</p>
+            //             <p class="companyName">Şirket ünvanı: ${supplierFiltered[i].customerInfo}</p>
+    
+            //             <div class="deleteCustomer">
+            //                 <button class="deleteButton" id = "${supplierFiltered[i].id}"  onClick="deleteData(this)"><img src=" ./assets/img/delete.png " width="9" height="9"></button>
+            //             </div>
+            //         </button>`;
+    
+            //         div.innerHTML += supplierFiltered[i].customerName;
+    
+            //         document.querySelector("#rightBackground").innerHTML = div;
+            //     }
+    
+            // }
+            
+            
 
-    for(var i = 0; i < VAT1.length; i++){
-        if(VAT1[i].checked){
-            console.log('checked:' + VAT1[i].value);
-            var infoKDV = VAT1[i].value;
-
-        }}
-
-    console.log(cost);
-    console.log(date);
-    console.log(infoKDV);
-
-    odemeAlYap(cost,infoKDV,inOrOut,date);
-
-}
 
 
+            userInfo = "";
+            userInfo += `
+            <p class="nameSurname">${post.data.fullName}</p>
+            <p class="homePageCompanyName">${post.data.companyName}</p>`;
+            document.querySelector("#userInfo").innerHTML = userInfo;
 
-//Ödeme Al Yap
-function odemeAlYap(cost,infoKDV,inOrOut,date){
-    console.log(cost); 
-    console.log(infoKDV); 
-    console.log(inOrOut); 
-    console.log(date); 
-    console.log(userID);
-    console.log(customerID);
+            topInfo = "";
+            topInfo += `
+            <p class="inWithKDV">KDV'li Alınan:  ${post.data.userbalance.inMoney}</p>
+            <p class="amountofKDV">KDV Miktarı: ${post.data.userbalance.amountVAT}</p>
+            <p class="inWithoutKDV">KDV'siz Alınan: ${post.data.userbalance.inMoneyVAT}</p>
+            <p class="out">Ödenen: ${post.data.userbalance.outMoney}</p>`;
+            document.querySelector("#topInfo").innerHTML = topInfo;
 
-   const data = { 
-        userID: userID, 
-        customerID: customerID, 
-        cost: cost, 
-        infoKDV: infoKDV, 
-        inOrOut: inOrOut, 
-        date: date 
-                }
 
-    console.log(data);
+            totalAmount = "";
+            totalAmount += `
+            <p class="total">Toplam Bakiye: ${post.data.userbalance.totalMoney}</p>
+            `;
+            document.querySelector("#leftLittleWhite").innerHTML = totalAmount;
 
-    var json = JSON.stringify(data);
-    console.log(json);
 
-    var urlpayment = "http://192.168.1.142:3000/api/v1/payments/add";
-    var xhrpayment = new XMLHttpRequest();
+            localStorage.setItem('totalAmount', post.data.userbalance.totalMoney);
 
-    xhrpayment.open('POST',urlpayment,true);
-    xhrpayment.setRequestHeader('Content-type','application/json; charset=utf-8');
-
-    xhrpayment.onload = function(){
-        // var resultpayment = JSON.parse(xhrpayment.response);
-        // console.log("resultnotes" , resultpayment);
-
-        // window.location.reload();
+        });
+        
+        
 
     }
-    xhrpayment.send(json);
+    xhr.send();
 }
 
 
-// DELETE PAYMENTS LİST
+function showData(item) {
+    var custid = item.id;
+    localStorage.setItem("customerid", custid);
+    window.location = "detail.html";
 
-// if(customerpayments.length != 0){
-// document.querySelector('.customerpayments-btn').addEventListener('click',deletePaymentsList);
 
-function deletePaymentsList(item){
-    var paymentsid = item.id;
-    console.log(paymentsid);
-     
-    var urldeletep = `http://192.168.1.142:3000/api/v1/payments/${userID}/delete/${paymentsid}`;
-    var xhrdeletep = new XMLHttpRequest();
+}
 
-    xhrdeletep.open('DELETE',urldeletep,true);
+//DELETİNG DATA
 
-    xhrdeletep.onload = function(){
-        var result = xhrdeletep.response;
-        console.log(result);
+function deleteData(item) {
+    //Find customer id
+    var customerid = item.id;
+
+    // Delete POST
+    var urldelete = `${baseurl}/customers/delete/${customerid}`
+    var xhrdelete = new XMLHttpRequest();
+    xhrdelete.open('DELETE', urldelete, true);
+    xhrdelete.setRequestHeader('Content-type', 'application/json; charset=UTF-8');
+
+
+    xhrdelete.onload = function () {
+        var result = JSON.parse(xhrdelete.response);
         window.location.reload();
     }
-    xhrdeletep.send();
+    xhrdelete.send();
+
 }
+
+
+// getUser();
+
+// function getUser() {
+//     var cID = sessionStorage.getItem('cID');
+//     var url = `http://192.168.1.142:3000/api/v1/customers/${id}/details/${cID}`;
+//     var xhr = new XMLHttpRequest();
+//     xhr.open("GET", url, true);
+//     xhr.onload = function() {
+//         var post = JSON.parse(this.response);
+//         console.log(post.customer);
+
+//         div = "";
+//         div += `
+//         <p class="nameSurname"></p>
+//         <p class="homePageCompanyName"></p>`;
+//         document.querySelector("#leftInBackground").innerHTML = div;
+
+//     }
+//     xhr.send();
+
+
 // }
-
-
-
-
-
-
-//3.popup
-
-// Popup Al
-var modal3 = document.getElementById('myModal');
-// Kipi açan düğmeyi al
-var btn3 = document.getElementById("notesButton");
-// Kipi kapatan <span> öğesini edinin
-var span3 = document.getElementsByClassName("close3")[0];
-// Kullanıcı düğmeyi tıklattığında
-btn3.onclick = function() {
-    modal3.style.display = "block";
-}
-// Kullanıcı <span> (x) düğmesini tıkladığında, popup
-span3.onclick = function() {
-    modal3.style.display = "none";
-}
-// Kullanıcı modelden başka herhangi bir yeri tıklattıysa, onu kapatın.
-window.onclick = function(event) {
-    if (event.target == modal3) {
-        modal3.style.display = "none";
-    }
-}
-
-// ADD NOTES
-
-var notes = document.getElementsByClassName('writeNote').value;
-var date = document.getElementsByClassName('calendar').value;
-
-document.querySelector('.addNoteSaveButton').addEventListener('click',notEkle);
-
-
-function notEkle(){
-    console.log(customerID);
-    var notes = document.getElementById('writeNote').value;
-
-    console.log(notes);
-    var date = document.getElementById('calendar').value;
-
-    console.log(date);
-
-    const data = {
-        customerID: customerID,
-        notes: notes,
-        date: date
-    }
-    console.log(data);
-
-    var json = JSON.stringify(data);
-    console.log(json);
-
-    var urlnotes = "http://192.168.1.142:3000/api/v1/notes/add";
-    var xhrnotes = new XMLHttpRequest();
-
-    xhrnotes.open('POST',urlnotes,true);
-    xhrnotes.setRequestHeader('Content-type','application/json; charset=utf-8');
-
-    xhrnotes.onload = function(){
-        var resultnotes = JSON.parse(xhrnotes.response);
-        console.log("resultnotes" , resultnotes);
-
-        window.location.reload();
-
-    }
-    xhrnotes.send(json);
-
-}
-
-
-console.log(customernotes.length);
-
-// DELETE NOTES
-
-// if(customernotes.length != 0){
-// document.querySelector('#customernotes-btn').addEventListener('click',deleteNotes);
-
-function deleteNotes(item){
-    var noteid = item.id;
-    console.log(noteid);
-    // var id = document.getElementById('customernotes-btn').value;
-    // console.log(id);
-     
-    var urldeleten = `http://192.168.1.142:3000/api/v1/notes/delete/${noteid}`;
-    var xhrdeleten = new XMLHttpRequest();
-
-    xhrdeleten.open('DELETE',urldeleten,true);
-
-    xhrdeleten.onload = function(){
-        var result = xhrdeleten.response;
-        console.log(result);
-        window.location.reload();
-    }
-    xhrdeleten.send();
-} 

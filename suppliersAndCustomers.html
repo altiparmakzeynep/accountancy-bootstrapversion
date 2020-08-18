@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="./src/css/customers.css">
-    <title>At Muhasebe</title>
+    <title>PXR Muhasebe</title>
 </head>
 
 <body>
@@ -49,16 +49,17 @@
 
                 </div>
                 <div class="right col-8 ">
+                    <div class="searchBox">
+                        <input class="searchInput" type="text" placeholder="Ara" onchange="getData(this.value)" id="filter_customers" value=""/>
+                        <!-- customer list -->
+                        <ul id="customers-list"></ul>
+                       </div>
                     <div class="rightBackground" id="rightBackground">
                         <div>
                             <img class="icon" src="./assets/img/icon.png ">
                         </div>
 
-                        <div class="searchBox">
-                         <input type="text" placeholder="Ara" id="filter_customers"/>
-                         <!-- customer list -->
-                         <ul id="customers-list"></ul>
-                       </div>
+                       
 
                         <!-- <div class="customers" id="customers">
                             <p class="companyName">Şirket adı: </p>
@@ -78,8 +79,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q " crossorigin="anonymous "></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl " crossorigin="anonymous "></script>
     <script src="src/js/suppliersAndCustomers.js"></script>
-
-
+    <script src="src/js/denemeSearch.js"></script>
 </body>
-
 </html>
