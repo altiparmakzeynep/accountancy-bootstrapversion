@@ -128,10 +128,13 @@ function getData() {
 
 
         payment = "";
+        var a = arrayCost.inMoney;
+        var b = arrayCost.inMoneyVAT;
+        var c = a + b ;
 
 
         payment += `
-         <p class="moneyIn">Alınan Ödeme: ${arrayCost.inMoney} </p> `;
+         <p class="moneyIn">Alınan Ödeme: ${c} </p> `;
         document.querySelector("#companyDetail").innerHTML = payment;
 
         payment += `

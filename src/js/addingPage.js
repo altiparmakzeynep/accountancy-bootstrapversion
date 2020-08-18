@@ -2,7 +2,7 @@ document.querySelector("#saveButton").addEventListener("click", postData);
 let id = localStorage.getItem("id");
 var baseurl ="https://accountancy-app-api.herokuapp.com/api/v1";
 
-
+getInfo();
 
 
 function postData(e) {
@@ -55,3 +55,5 @@ function addCustomer() {
 
 
 }
+
+
