@@ -63,7 +63,7 @@ function getData(value) {
                                   <button class="yeterButton" id = "${item.id}" onclick="showData(this)"><img src=" ./assets/img/info.png " width="15" height="15"></button>
                                   <p class="companyName">Şirket adı: ${item.customerName}</p>
                                   <p class="companyName">Şirket ünvanı: ${item.customerInfo}</p>
-                                  <button class="deleteButton" id = "${item.id}"  onClick="deleteData(this)"><img src=" ./assets/img/delete.png " width="9" height="9"></button>
+                                  <button class="deleteButton" id = "${item.id}"  onClick="deneme(this)"><img src=" ./assets/img/delete.png " width="9" height="9"></button>
                                 </div>`;
                 
                                 div.innerHTML += item.customerName;
@@ -78,7 +78,7 @@ function getData(value) {
                                   <button class="yeterButton" id = "${item.id}" onclick="showData(this)"><img src=" ./assets/img/info.png " width="15" height="15"></button>
                                   <p class="companyName">Şirket adı: ${item.customerName}</p>
                                   <p class="companyName">Şirket ünvanı: ${item.customerInfo}</p>
-                                  <button class="deleteButton" id = "${item.id}"  onClick="deleteData(this)"><img src=" ./assets/img/delete.png " width="9" height="9"></button>
+                                  <button class="deleteButton" id = "${item.id}"  onClick="deneme(this)"><img src=" ./assets/img/delete.png " width="9" height="9"></button>
                                 </div>`;
                 
                                 div.innerHTML += item.customerName;
