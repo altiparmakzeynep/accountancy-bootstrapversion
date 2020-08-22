@@ -178,13 +178,25 @@ function showData(item) {
 
 
 }
+function deneme(item){
+    var customerid = item.id;
+    
+    localStorage.setItem("customerid", customerid);
+    if( confirm("silmek istediğinizden emin misiniz ?")){
+        deleteData();
+    }else {
+        getData();
+    }
+}
 
 //DELETİNG DATA
 
 function deleteData() {
     //Find customer id
     // var customerid = item.id;
-    var customerid = localStorage.getItem("customerid");
+
+   var customerid = localStorage.getItem("customerid");
+
 
     // Delete POST
     var urldelete = `${baseurl}/customers/delete/${customerid}`

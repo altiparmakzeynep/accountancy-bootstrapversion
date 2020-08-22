@@ -63,15 +63,10 @@ function getData(value) {
                                   <button class="yeterButton" id = "${item.id}" onclick="showData(this)"><img src=" ./assets/img/info.png " width="15" height="15"></button>
                                   <p class="companyName">Şirket adı: ${item.customerName}</p>
                                   <p class="companyName">Şirket ünvanı: ${item.customerInfo}</p>
-                                  <button class="deleteButton" id = "${item.id}"  onClick="war(this)"><img src=" ./assets/img/delete.png " width="9" height="9"></button>
-                                </div>
-                                <div id="modal" class="modal">
 
-                            <!-- Modal content -->
-                            <div class="modal-content">
-                                <span class="close">&times;</span>
-                                <p>Some text in the Modal..</p>
-                            </div>`;
+                                  <button class="deleteButton" id = "${item.id}"  onClick="deneme(this)"><img src=" ./assets/img/delete.png " width="9" height="9"></button>
+                                </div>`;
+
                 
                                 div.innerHTML += item.customerName;
                                  })
@@ -85,12 +80,11 @@ function getData(value) {
                                   <button class="yeterButton" id = "${item.id}" onclick="showData(this)"><img src=" ./assets/img/info.png " width="15" height="15"></button>
                                   <p class="companyName">Şirket adı: ${item.customerName}</p>
                                   <p class="companyName">Şirket ünvanı: ${item.customerInfo}</p>
+
                                   <button class="deleteButton" id = "${item.id}"  onClick="deleteData(this)"><img src=" ./assets/img/delete.png " width="9" height="9"></button>
                                 </div>
-                                
-                                
-                                
                                 `;
+
                 
                                 div.innerHTML += item.customerName;
                                  })
@@ -98,7 +92,7 @@ function getData(value) {
         }
         
 
-        array.forEach(function (item) {
+        // array.forEach(function (item) {
         //     let div = document.createElement('div');
         //     div.classList = "customers";
 
@@ -162,7 +156,7 @@ function getData(value) {
 
            
 
-        });
+        // });
         
 
     }
