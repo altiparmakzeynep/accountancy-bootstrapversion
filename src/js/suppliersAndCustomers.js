@@ -178,12 +178,21 @@ function showData(item) {
 
 
 }
+function deneme(item){
+    var customerid = item.id;
+    
+    localStorage.setItem("customerid", customerid);
+    war();
+}
 
 //DELETING DATA
 
-function deleteData(item) {
+function deleteData() {
     //Find customer id
-    var customerid = item.id;
+    // var customerid = item.id;
+
+   var customerid = localStorage.getItem("customerid");
+
 
     // Delete POST
     var urldelete = `${baseurl}/customers/delete/${customerid}`
@@ -199,6 +208,36 @@ function deleteData(item) {
     xhrdelete.send();
 
 }
+// Get the modal
+var modal = document.getElementById("modal");
+console.log('modal',modal);
+localStorage.setItem('modal',modal);
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+ function war() {
+    // var modal1 = localStorage.getItem('modal');
+    console.log(modal);
+    modal.style.display = 'block';
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+
+document.querySelector('.yes').addEventListener('click',deleteData);
+document.querySelector('.no').addEventListener('click',function(){window.location.reload();});
 
 
 // getUser();

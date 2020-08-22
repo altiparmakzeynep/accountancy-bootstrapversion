@@ -44,7 +44,7 @@ function getData() {
 
        
 
-        array.forEach(function(item) {
+        
             
 
             userInfo = "";
@@ -71,7 +71,7 @@ function getData() {
 
             localStorage.setItem('totalAmount', post.data.userbalance.totalMoney);
 
-        });
+        
 
     }
     xhr.send();
