@@ -8,7 +8,8 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="./src/css/customers.css">
     <title>PXR Muhasebe</title>
 </head>
@@ -16,9 +17,12 @@
 <body>
     <nav class="navbar navbar-light bg-light">
         <div class="plus">
-            <button class="plusButton" onclick="window.location.href='addingPage.html'"><img src=" ./assets/img/plus.png " width="30 " height="30 "></button>
-            <button class="homepage" onclick="window.location.href='customers.html'"><img src="./assets/img/homepage.png" width="31" height="31"></button>
-            <button class="logOut" onclick="window.location.href='login.html'"><img src="./assets/img/logout.png" width="31" height="31"></button>
+            <button class="plusButton" onclick="window.location.href='addingPage.html'"><img
+                    src=" ./assets/img/plus.png " width="30 " height="30 "></button>
+            <button class="homepage" onclick="window.location.href='customers.html'"><img
+                    src="./assets/img/homepage.png" width="31" height="31"></button>
+            <button class="logOut" onclick="window.location.href='login.html'"><img src="./assets/img/logout.png"
+                    width="31" height="31"></button>
 
 
         </div>
@@ -49,17 +53,31 @@
 
                 </div>
                 <div class="right col-8 ">
+                    <div id="modal" class="modal">
+
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <p>Some text in the Modal..</p>
+                            <button class="yes">EVET</button>
+                            <button class="no">HAYIR</button>
+                        </div>
+                    </div>    
                     <div class="searchBox">
-                        <input class="searchInput" type="text" placeholder="Ara" onchange="getData(this.value)" id="filter_customers" value=""/>
+                        <input class="searchInput" type="text" placeholder="Ara" onchange="getData(this.value)"
+                            id="filter_customers" value="" />
                         <!-- customer list -->
                         <ul id="customers-list"></ul>
-                       </div>
+                    </div>
                     <div class="rightBackground" id="rightBackground">
+                        
+
+                        </div>
                         <div>
                             <img class="icon" src="./assets/img/icon.png ">
                         </div>
 
-                       
+
 
                         <!-- <div class="customers" id="customers">
                             <p class="companyName">Şirket adı: </p>
@@ -75,10 +93,18 @@
     </nav>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN " crossorigin="anonymous "></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q " crossorigin="anonymous "></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl " crossorigin="anonymous "></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js "
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN "
+        crossorigin="anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js "
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q "
+        crossorigin="anonymous "></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js "
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl "
+        crossorigin="anonymous "></script>
     <script src="src/js/suppliersAndCustomers.js"></script>
     <script src="src/js/denemeSearch.js"></script>
+
 </body>
+
 </html>
