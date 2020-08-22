@@ -62,7 +62,7 @@ function getData(value) {
                                 <div class="customers">
                                   <button class="yeterButton" id = "${item.id}" onclick="showData(this)"><img src=" ./assets/img/info.png " width="15" height="15"></button>
                                   <p class="companyName">Şirket adı: ${item.customerName}</p>
-                                  <p class="companyName">Şirket ünvanı: ${item.customerInfo}</p>
+                                  <p class="companyNamee">Şirket ünvanı: ${item.customerInfo}</p>
                                   <button class="deleteButton" id = "${item.id}"  onClick="deneme(this)"><img src=" ./assets/img/delete.png " width="9" height="9"></button>
                                 </div>`;
 
@@ -78,8 +78,8 @@ function getData(value) {
                                 <div class="customers">
                                   <button class="yeterButton" id = "${item.id}" onclick="showData(this)"><img src=" ./assets/img/info.png " width="15" height="15"></button>
                                   <p class="companyName">Şirket adı: ${item.customerName}</p>
-                                  <p class="companyName">Şirket ünvanı: ${item.customerInfo}</p>
-                                  <button class="deleteButton" id = "${item.id}"  onClick="deleteData(this)"><img src=" ./assets/img/delete.png " width="9" height="9"></button>
+                                  <p class="companyNamee">Şirket ünvanı: ${item.customerInfo}</p>
+                                  <button class="deleteButton" id = "${item.id}"  onClick="deneme(this)"><img src=" ./assets/img/delete.png " width="9" height="9"></button>
                                 </div>
                                 `;
 

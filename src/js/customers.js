@@ -41,10 +41,6 @@ function getData() {
         // console.log(totalAmount);
 
 
-
-       
-
-        
             
 
             userInfo = "";
@@ -67,8 +63,6 @@ function getData() {
             <p class="total">Toplam Bakiye: ${post.data.userbalance.totalMoney}</p>
             `;
             document.querySelector("#leftLittleWhite").innerHTML = totalAmount;
-
-
             localStorage.setItem('totalAmount', post.data.userbalance.totalMoney);
 
         
