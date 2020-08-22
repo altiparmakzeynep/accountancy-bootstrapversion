@@ -12,6 +12,8 @@ getData();
 
 
 
+
+
 function getData(value) {
     var url = `${baseurl}/customers/${id}`;
     //var url = `http://e3b5dab837cc.ngrok.io/api/v1/customers/${id}`;
@@ -63,12 +65,52 @@ function getData(value) {
                                   <button class="yeterButton" id = "${item.id}" onclick="showData(this)"><img src=" ./assets/img/info.png " width="15" height="15"></button>
                                   <p class="companyName">Şirket adı: ${item.customerName}</p>
                                   <p class="companyName">Şirket ünvanı: ${item.customerInfo}</p>
-                                  <button class="deleteButton" id = "${item.id}"  onClick="deleteData(this)"><img src=" ./assets/img/delete.png " width="9" height="9"></button>
-                                </div>`;
-                
+                                 <button class="deleteButton" id = "zeynep" ><img src=" ./assets/img/delete.png " width="9" height="9"></button>
+              
+                                </div> 
+                                <!-- The Modal -->
+                                <div id="myModal" class="modal">
+                                
+                                  <!-- Modal content -->
+                                  <div class="modal-content">
+                                    <span class="close">&times;</span>
+                                    <p>Some text in the Modal..</p>
+                                  </div>
+                                
+                                </div>
+                        `;
+                        
                                 div.innerHTML += item.customerName;
                                  })
                                document.querySelector("#rightBackground").innerHTML = div;
+
+
+                               // Get the modal
+var modal = document.getElementById("myModal");
+
+// // Get the button that opens the modal
+var btn = document.getElementById("zeynep");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// // When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
         }else{
             supplierFiltered.filter((supplierItem) => supplierItem.customerInfo.includes(value) 
                                || supplierItem.customerName.includes(value))
@@ -78,8 +120,15 @@ function getData(value) {
                                   <button class="yeterButton" id = "${item.id}" onclick="showData(this)"><img src=" ./assets/img/info.png " width="15" height="15"></button>
                                   <p class="companyName">Şirket adı: ${item.customerName}</p>
                                   <p class="companyName">Şirket ünvanı: ${item.customerInfo}</p>
-                                  <button class="deleteButton" id = "${item.id}"  onClick="deleteData(this)"><img src=" ./assets/img/delete.png " width="9" height="9"></button>
-                                </div>`;
+                                  <button class="deleteButton" id = "${item.id}"><img src=" ./assets/img/delete.png " width="9" height="9"></button>
+                                </div>
+                                
+
+                               
+                                
+                                `;
+                        
+
                 
                                 div.innerHTML += item.customerName;
                                  })
@@ -154,6 +203,8 @@ function getData(value) {
         });
         
 
+      
     }
     xhr.send();
 }
+

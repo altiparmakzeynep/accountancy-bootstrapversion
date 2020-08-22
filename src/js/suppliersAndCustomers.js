@@ -179,7 +179,7 @@ function showData(item) {
 
 }
 
-//DELETİNG DATA
+//DELETING DATA
 
 function deleteData(item) {
     //Find customer id
