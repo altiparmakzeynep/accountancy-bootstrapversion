@@ -122,6 +122,7 @@ function getData() {
         div += `
                 <p class="companyName">${array.customerName} </p>
                 <p class="companyInfo">${array.customerInfo}</p>
+                <p class="taxNoAndOffice">${array.taxNumber}/${array.taxAddress}</p>
          `;
 
         document.querySelector("#customers").innerHTML = div;
