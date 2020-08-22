@@ -178,9 +178,14 @@ function showData(item) {
 
 
 }
+function deneme(item){
+    var customerid = item.id;
+    
+    localStorage.setItem("customerid", customerid);
+    war();
+}
 
-
-//DELETİNG DATA
+//DELETING DATA
 
 function deleteData() {
     //Find customer id
@@ -211,20 +216,13 @@ console.log('modal', modal);
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
-function deneme(item){
-    var custid = item.id;
-    console.log(custid);
-    localStorage.setItem("customerid", custid);
-    war();
-}
 
 // When the user clicks on the button, open the modal
-function war() {
+ function war() {
     // var modal1 = localStorage.getItem('modal');
     
     console.log(modal);
     modal.style.display = 'block';
-
 }
 
 // When the user clicks on <span> (x), close the modal
