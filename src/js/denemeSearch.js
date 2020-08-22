@@ -56,7 +56,7 @@ function getData(value) {
     
         if( category == "1"){
             customerFiltered.filter((customerItem) => customerItem.customerInfo.includes(value) 
-                               || customerItem.customerName.includes(value))
+                               || customerItem.customerName.toLowerCase().includes(value))
                                .map((item, index) =>{
                                 div += `
                                 <div class="customers">
@@ -73,14 +73,15 @@ function getData(value) {
                                document.querySelector("#rightBackground").innerHTML = div;
         }else{
             supplierFiltered.filter((supplierItem) => supplierItem.customerInfo.includes(value) 
-                               || supplierItem.customerName.includes(value))
+                               || supplierItem.customerName.toLowerCase().includes(value))
                                .map((item, index) =>{
                                 div += `
                                 <div class="customers">
                                   <button class="yeterButton" id = "${item.id}" onclick="showData(this)"><img src=" ./assets/img/info.png " width="15" height="15"></button>
                                   <p class="companyName">Şirket adı: ${item.customerName}</p>
                                   <p class="companyName">Şirket ünvanı: ${item.customerInfo}</p>
-                                  <button class="deleteButton" id = "${item.id}"  onClick="deleteData(this)"><img src=" ./assets/img/delete.png " width="9" height="9"></button>
+                                  <p class="phoneNumber">${item.phoneNumber}</p>
+                                  <button class="deleteButton" id = "${item.id}"  onClick="deneme(this)"><img src=" ./assets/img/delete.png " width="9" height="9"></button>
                                 </div>
                                 `;
 
