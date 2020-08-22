@@ -86,55 +86,55 @@ function getData() {
             ul.appendChild(div);
             div = "";
 
-         
+
             // FOR LOOP
             // if(category == "1") {
             //     for (var i = 0; i < customerFiltered.length; i++) {
             //         // console.log(array[i].whichCategory);
             //         // var category = localStorage.getItem("category", category);
-    
-    
+
+
             //             //Every buttons have own id from customers array
             //         div += `
             //         <button class="customers" id = " aaaaaa${customerFiltered[i].id}" onclick="showData(this)">
             //             <p class="companyName">Şirket adı: ${customerFiltered[i].customerName}</p>
             //             <p class="companyName">Şirket ünvanı: ${customerFiltered[i].customerInfo}</p>
-    
+
             //             <div class="deleteCustomer">
             //                 <button class="deleteButton" id = "${customerFiltered[i].id}"  onClick="deleteData(this)"><img src=" ./assets/img/delete.png " width="9" height="9"></button>
             //             </div>
             //         </button>`;
-    
+
             //         div.innerHTML += customerFiltered[i].customerName;
-    
+
             //         document.querySelector("#rightBackground").innerHTML = div;
             //     }
-    
+
             // } else {
             //     for (var i = 0; i < supplierFiltered.length; i++) {
             //         // console.log(array[i].whichCategory);
             //         // var category = localStorage.getItem("category", category);
-    
-    
+
+
             //             //Every buttons have own id from customers array
             //         div += `
             //         <button class="customers" id = "${supplierFiltered[i].id}" onclick="showData(this)">
             //             <p class="companyName">Şirket adı: ${supplierFiltered[i].customerName}</p>
             //             <p class="companyName">Şirket ünvanı: ${supplierFiltered[i].customerInfo}</p>
-    
+
             //             <div class="deleteCustomer">
             //                 <button class="deleteButton" id = "${supplierFiltered[i].id}"  onClick="deleteData(this)"><img src=" ./assets/img/delete.png " width="9" height="9"></button>
             //             </div>
             //         </button>`;
-    
+
             //         div.innerHTML += supplierFiltered[i].customerName;
-    
+
             //         document.querySelector("#rightBackground").innerHTML = div;
             //     }
-    
+
             // }
-            
-            
+
+
 
 
 
@@ -163,8 +163,8 @@ function getData() {
             localStorage.setItem('totalAmount', post.data.userbalance.totalMoney);
 
         });
-        
-        
+
+
 
     }
     xhr.send();
@@ -191,7 +191,7 @@ function deleteData() {
     //Find customer id
     // var customerid = item.id;
 
-   var customerid = localStorage.getItem("customerid");
+    var customerid = localStorage.getItem("customerid");
 
 
     // Delete POST
@@ -210,29 +210,31 @@ function deleteData() {
 }
 // Get the modal
 var modal = document.getElementById("modal");
-console.log('modal',modal);
-localStorage.setItem('modal',modal);
+console.log('modal', modal);
+
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
+
 // When the user clicks on the button, open the modal
  function war() {
     // var modal1 = localStorage.getItem('modal');
+    
     console.log(modal);
     modal.style.display = 'block';
 }
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
+span.onclick = function () {
+    modal.style.display = "none";
 }
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
 }
 
 

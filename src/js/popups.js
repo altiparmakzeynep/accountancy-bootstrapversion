@@ -149,14 +149,54 @@ function odemeAlYap(cost,infoKDV,inOrOut,date){
 }
 
 
+// Get the modal delete payment
+var modalP = document.getElementById("DeletePmodal");
+console.log('modal', modalP);
+
+
+// Get the <span> element that closes the modal
+var spanP = document.getElementsByClassName("closeP")[0];
+
+
+// When the user clicks on the button, open the modal
+function getIdP(item){
+    var paymentsid = item.id;
+    
+    localStorage.setItem("paymentsid", paymentsid);
+    PayDelPopup();
+}
+
+ function PayDelPopup() {
+    // var modal1 = localStorage.getItem('modal');
+    
+    console.log(modalP);
+    modalP.style.display = 'block';
+}
+
+// When the user clicks on <spanP> (x), close the modalP
+spanP.onclick = function () {
+    modalP.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modalP, close it
+window.onclick = function (event) {
+    if (event.target == modalP) {
+        modalP.style.display = "none";
+    }
+}
+
+document.querySelector('.yesPay').addEventListener('click',deletePaymentsList);
+document.querySelector('.noP').addEventListener('click',function(){window.location.reload();});
+
+
 // DELETE PAYMENTS LİST
 
 // if(customerpayments.length != 0){
 // document.querySelector('.customerpayments-btn').addEventListener('click',deletePaymentsList);
 
-function deletePaymentsList(item){
-    var paymentsid = item.id;
-    console.log(paymentsid);
+function deletePaymentsList(){
+    var paymentsid = localStorage.getItem("paymentsid");;
+    console.log("paymentsid:",paymentsid);
      
     var urldeletep = `${baseurl}/payments/${userID}/delete/${paymentsid}`;
     var xhrdeletep = new XMLHttpRequest();
@@ -245,16 +285,58 @@ function notEkle(){
 }
 
 
-console.log(customernotes.length);
+// console.log(customernotes.length);
+
+// Get the modal delete note
+var modalN = document.getElementById("DeleteNmodal");
+console.log('modalN', modalN);
+
+
+// Get the <span> element that closes the modal
+var spanN = document.getElementsByClassName("closeN")[0];
+
+
+// When the user clicks on the button, open the modal
+function getIdN(item){
+    var noteid = item.id;
+    console.log("noteid1",noteid);
+
+    
+    localStorage.setItem("noteid", noteid);
+    NoteDelPopup();
+}
+
+ function NoteDelPopup() {
+    // var modal1 = localStorage.getItem('modal');
+    
+    console.log(modalN);
+    modalN.style.display = 'block';
+}
+
+// When the user clicks on <span> (x), close the modal
+spanN.onclick = function () {
+    modalN.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+    if (event.target == modalN) {
+        modalN.style.display = "none";
+    }
+}
+
+document.querySelector('.yesNote').addEventListener('click',deleteN);
+document.querySelector('.noN').addEventListener('click',function(){window.location.reload();});
+
 
 // DELETE NOTES
 
-// if(customernotes.length != 0){
-// document.querySelector('#customernotes-btn').addEventListener('click',deleteNotes);
 
-function deleteNotes(item){
-    var noteid = item.id;
-    console.log(noteid);
+
+function deleteN(){
+    
+    var noteid = localStorage.getItem("noteid");
+    console.log("noteid:",noteid);
     // var id = document.getElementById('customernotes-btn').value;
     // console.log(id);
      

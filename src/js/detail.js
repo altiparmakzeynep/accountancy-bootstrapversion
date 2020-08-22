@@ -156,7 +156,7 @@ function getData() {
                 var a = date.slice(0,10);
                 divpayment += `
                     <div>
-                     <button class="customerpayments-btn" id="${post.customer.payments[j].id}" onClick="deletePaymentsList(this)"></button>
+                     <button class="customerpayments-btn" id="${post.customer.payments[j].id}" onClick="getIdP(this)"></button>
                      <p class="historyTexts"> - ${arrayPayment[j].cost}£  -  ${a}</p>
                     </div>
                     `;
@@ -165,7 +165,7 @@ function getData() {
                 var a = date.slice(0,10);
                 divpayment += `
                     <div>
-                     <button class="customerpayments-btn" id="${post.customer.payments[j].id}" onClick="deletePaymentsList(this)"> </button>
+                     <button class="customerpayments-btn" id="${post.customer.payments[j].id}" onClick="getIdP(this)"> </button>
                      <p class="historyTexts"> + ${arrayPayment[j].cost}£  -  ${a}</p>
                      </div>
                     `;
@@ -261,7 +261,7 @@ function getNotes() {
         for (var n = 0; n < arrayNotes.length; n++) {
             console.log(array.notes[n].notes);
             div += `
-            <button class="customernotes-btn"  id="${arrayNotes[n].id}" onClick="deleteNotes(this)"><img src=" ./assets/img/delete.png " width="9" height="9"></button>
+            <button class="customernotes-btn"  id="${arrayNotes[n].id}" onClick="getIdN(this)"><img src=" ./assets/img/delete.png " width="9" height="9"></button>
              <p>${arrayNotes[n].notes}</p>
             `;
 
