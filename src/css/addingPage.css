@@ -125,57 +125,55 @@
 }
 
 .companyInput {
-    width: 35%;
-    height: 7%;
+   
+   align-self: center;
+   display: flex;
     background-color: #e5e6e9;
     border-radius: 8px;
-    top: 10%;
+    margin-bottom:10px;
     left: 10%;
-    position: absolute;
     border: none;
+    height: 7%;
 }
 
 .companyNameInput {
-    width: 35%;
-    height: 7%;
+   
+   
     background-color: #e5e6e9;
     border-radius: 8px;
-    top: 25%;
+    margin-bottom:10px;
     left: 10%;
-    position: absolute;
     border: none;
+    height: 7%;
 }
 
 .numberInput {
-    width: 35%;
-    height: 7%;
+   
+   
     background-color: #e5e6e9;
     border-radius: 8px;
-    top: 40%;
+    margin-bottom:10px;
     left: 10%;
-    position: absolute;
+    height: 7%;
     border: none;
 }
 
 .taxNumberInput {
-    width: 35%;
-    height: 7%;
     background-color: #e5e6e9;
     border-radius: 8px;
-    top: 55%;
+    margin-bottom:10px;
     left: 10%;
-    position: absolute;
+    height: 7%;
     border: none;
 }
 
 .taxOfficeInput {
-    width: 35%;
     height: 7%;
     background-color: #e5e6e9;
     border-radius: 8px;
-    top: 70%;
+    margin-bottom:10px;
     left: 10%;
-    position: absolute;
+   
     border: none;
 }
 
@@ -191,32 +189,31 @@
 }
 
 .taxOffice {
-    position: absolute;
-    bottom:27%;
+   
     margin-left: 11%;
 }
 
 .taxNumber {
-    position: absolute;
-    top: 50%;
+   
+   
     margin-left: 11%;
 }
 
 .number {
-    position: absolute;
-    top: 35%;
+   
+    
     margin-left: 11%;
 }
 
 .companyName {
-    position: absolute;
-    margin-top: 14%;
+   
+  
     margin-left: 11%;
 }
 
 .company {
-    position: absolute;
-    margin-top: 3.5%;
+   
+    
     margin-left: 11%;
 }
 
@@ -344,10 +341,17 @@
 .form {
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
+    width: 50%;
+    margin-left:10%;
+    margin-top: 5%;
+    height: 70%;
+
+  
 }
 
 .radioButtons{
-    position: absolute;
+    
     bottom: 8%;
     margin-left: 10.5%;
+    
 }
