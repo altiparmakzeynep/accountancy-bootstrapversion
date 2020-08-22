@@ -437,26 +437,33 @@
                         }
                         .customerpayments-btn{
               
-                            height: 10px;
-                            background-color:red;
-                            width: 3%;
+                            height: 20px;
+                            background-color:#a7a6ac;
+                            width: 6%;
                             border:none;
-                            margin-top: 2.5%;
+                            margin-top: 2%;
                             right: 4%;
                             /* float: left; */
-                            border-radius: 30px;
+                            border-radius: 6px;
                             position: absolute;
                             z-index: 2;
                           
                         
                         }
                         .customernotes-btn{
+                            margin:2px;
                             border:none;
                             float: right;
                             right: 24%;
-                            background-color: #C83939;
+                            background-color: #a7a6ac;
                             /* border-radius: 8px; */
                             height: 10%;
                             border-radius:6px;
+                        }.crossImage{
+                            position:absolute;
+                            height:9px;
+                            width: 9px;
+                            margin-top:-3.5px;
+                            margin-left:-3px ;
                         }
                      

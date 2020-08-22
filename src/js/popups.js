@@ -30,7 +30,7 @@ document.querySelector('.paymentSaveButton').addEventListener('click',odemeYap);
 
 
 function odemeYap(){
-    var cost = parseInt(document.getElementById('paymentAmount').value);
+    var cost = parseFloat(document.getElementById('paymentAmount').value);
     var date = document.getElementById('paymentCalendar').value;
     // var VAT2 = document.getElementsByName('radio1');
     var inOrOut = "0";
@@ -83,7 +83,7 @@ document.querySelector('.getpaidSaveButton').addEventListener('click',odemeAl);
 
 
 function odemeAl(){
-    var cost = parseInt(document.getElementById('odemetutari-odemeal').value);
+    var cost = parseFloat(document.getElementById('odemetutari-odemeal').value);
     var date = document.getElementById('getpaidCalendar').value;
     var VAT1 = document.getElementsByName('customerAndSupplierRadioBtn');
     var inOrOut = "1";

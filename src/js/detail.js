@@ -85,7 +85,7 @@ function getData() {
                 var a = date.slice(0,10);
                 divpayment += `
                     <div>
-                     <button class="customerpayments-btn" id="${post.customer.payments[j].id}" onClick="getIdP(this)"></button>
+                     <button class="customerpayments-btn" id="${post.customer.payments[j].id}" onClick="getIdP(this)"><img class="crossImage" src=" ./assets/img/delete.png " width="9" height="9"></button>
                      <p class="historyTexts"> - ${arrayPayment[j].cost}£  -  ${a}</p>
                     </div>
                     `;
@@ -94,7 +94,7 @@ function getData() {
                 var a = date.slice(0,10);
                 divpayment += `
                     <div>
-                     <button class="customerpayments-btn" id="${post.customer.payments[j].id}" onClick="getIdP(this)"> </button>
+                     <button class="customerpayments-btn" id="${post.customer.payments[j].id}" onClick="getIdP(this)"><img class="crossImage" src=" ./assets/img/delete.png " width="9" height="9"></button>
                      <p class="historyTexts"> + ${arrayPayment[j].cost}£  -  ${a}</p>
                      </div>
                     `;
