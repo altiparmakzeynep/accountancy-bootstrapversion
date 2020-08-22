@@ -198,10 +198,11 @@
 }
 
 .deleteButton {
-
+    /* position: relative; */
     border: none;
     background: none;
     float: right;
+    margin-top:-10%;
   
 }
 
@@ -215,7 +216,7 @@
     font-weight: 500;
     line-height: 0.1%;
 }
-.companyNamee{
+.companyInfo{
     position: relative;
     font-size: 10pt;
     /* float: left; */
@@ -226,7 +227,11 @@
     margin-left: 5%;
 }
 
-
+.phoneNumber{
+    position: relative;
+    font-size: 10pt;
+    margin-left: 5%;
+  }
 .customersDetailButton{
     border-radius: 12px;
     border:none;
@@ -303,7 +308,6 @@
   
   /* Modal Content/Box */
   .modal-content {
-    background-color: #fefefe;
     margin: 50% auto; /* 15% from the top and centered */
     /* padding: 20px; */
     border-color: white;
@@ -318,10 +322,11 @@
   
   /* The Close Button */
   .close {
-    color: #aaa;
+    color: black;
     float: right;
     font-size: 28px;
     font-weight: bold;
+    position: absolute;
   }
   .yes{
       background-color:black;
@@ -362,3 +367,4 @@
       font-weight: 500;
       margin-top:4%;
   }
+

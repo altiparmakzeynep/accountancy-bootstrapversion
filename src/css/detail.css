@@ -362,17 +362,25 @@
                         }
                         
                         .companyName {
-                            position: fixed;
-                            margin-left: 1%;
+                        
+                            margin-left: 3%;
                             margin-top: 1%;
                         }
                         
                         .companyInfo {
-                            position: fixed;
-                            margin-left: 1%;
-                            margin-top: 3%;
+                            
+                            margin-left: 3%;
+                            margin-top: -1.5%;
                         }
                         
+                        .taxNoAndOffice{
+                            
+                            /* font-size: 12pt; */
+                            margin-left: 3%;
+                            margin-top: -1.5%;
+                            
+                           
+                        }
                         .moneyIn {
                             position: fixed;
                             margin-top: 1.5%;
@@ -451,4 +459,4 @@
                             height: 10%;
                             border-radius:6px;
                         }
-                        
+                     
