@@ -4,83 +4,11 @@ console.log(userID);
 var customerID = localStorage.getItem("customerid");
 console.log(customerID);
 var baseurl ="https://accountancy-app-api.herokuapp.com/api/v1";
-
-// // Get the modal
-// var modal = document.getElementById("myModal");
-
-// // Get the button that opens the modal
-// var btn1 = document.getElementById("notesButton");
-
-
-// // Get the <span> element that closes the modal
-// var span = document.getElementsByClassName("close")[0];
-
-// // When the user clicks the button, open the modal 
-// btn1.onclick = function() {
-//     modal.style.display = "block";
-// }
-
-// /*When the user clicks on <span> (x), close the modal
-// span.onclick = function() {
-//     modal.style.display = "none";
-// }*/
-
-// // When the user clicks anywhere outside of the modal, close it
-// window.onclick = function(event) {
-//     if (event.target == modal) {
-//         modal.style.display = "none";
-//     }
-// }
+;
 
 
 
 
-// //post notes
-// var id = localStorage.getItem("id");
-
-// document.querySelector("#addNoteSaveButton").addEventListener("click", postData);
-// //document.querySelector("#addNoteButton").addEventListener("click", getNotes);
-
-
-
-
-
-// //ADD NOTE
-// function postData() {
-//     //customer ID from another JS page
-//     var cID = sessionStorage.getItem('cID');
-//     // console.log(cID);
-
-//     const data = {
-//         customerID: cID,
-//         notes: document.getElementById("writeNote").value,
-//         date: document.getElementById("calendar").value,
-
-//     }
-
-//     //sending notes
-//     var json = JSON.stringify(data);
-//     var url = "http://192.168.1.142:3000/api/v1/notes/add";
-//     //var url = `http://e3b5dab837cc.ngrok.io/api/v1/notes/add`;
-//     var xhr = new XMLHttpRequest();
-//     xhr.open("POST", url, true);
-//     xhr.setRequestHeader("Content-type", "application/json; charset=utf-8");
-
-
-//     xhr.onload = function() {
-
-//     }
-//     xhr.send(json);
-
-//     //LOCAL STORAGE
-//     // const deneme = localStorage.setItem("cıd", data.customerID);
-//     // const notes = localStorage.setItem("notes", data.notes);
-//     // const date = localStorage.setItem("date", data.date);
-//     // console.log(data.notes);
-//     // console.log(data.date);
-//     // console.log(deneme);
-
-// }
 //console.log(localStorage);
 
 var id = localStorage.getItem("id", id);
@@ -122,6 +50,7 @@ function getData() {
         div += `
                 <p class="companyName">${array.customerName} </p>
                 <p class="companyInfo">${array.customerInfo}</p>
+                <p class="taxNoAndOffice">${array.taxNumber}/${array.taxAddress}</p>
          `;
 
         document.querySelector("#customers").innerHTML = div;

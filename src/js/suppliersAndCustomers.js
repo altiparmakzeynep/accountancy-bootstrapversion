@@ -87,54 +87,6 @@ function getData() {
             div = "";
 
 
-            // FOR LOOP
-            // if(category == "1") {
-            //     for (var i = 0; i < customerFiltered.length; i++) {
-            //         // console.log(array[i].whichCategory);
-            //         // var category = localStorage.getItem("category", category);
-
-
-            //             //Every buttons have own id from customers array
-            //         div += `
-            //         <button class="customers" id = " aaaaaa${customerFiltered[i].id}" onclick="showData(this)">
-            //             <p class="companyName">Şirket adı: ${customerFiltered[i].customerName}</p>
-            //             <p class="companyName">Şirket ünvanı: ${customerFiltered[i].customerInfo}</p>
-
-            //             <div class="deleteCustomer">
-            //                 <button class="deleteButton" id = "${customerFiltered[i].id}"  onClick="deleteData(this)"><img src=" ./assets/img/delete.png " width="9" height="9"></button>
-            //             </div>
-            //         </button>`;
-
-            //         div.innerHTML += customerFiltered[i].customerName;
-
-            //         document.querySelector("#rightBackground").innerHTML = div;
-            //     }
-
-            // } else {
-            //     for (var i = 0; i < supplierFiltered.length; i++) {
-            //         // console.log(array[i].whichCategory);
-            //         // var category = localStorage.getItem("category", category);
-
-
-            //             //Every buttons have own id from customers array
-            //         div += `
-            //         <button class="customers" id = "${supplierFiltered[i].id}" onclick="showData(this)">
-            //             <p class="companyName">Şirket adı: ${supplierFiltered[i].customerName}</p>
-            //             <p class="companyName">Şirket ünvanı: ${supplierFiltered[i].customerInfo}</p>
-
-            //             <div class="deleteCustomer">
-            //                 <button class="deleteButton" id = "${supplierFiltered[i].id}"  onClick="deleteData(this)"><img src=" ./assets/img/delete.png " width="9" height="9"></button>
-            //             </div>
-            //         </button>`;
-
-            //         div.innerHTML += supplierFiltered[i].customerName;
-
-            //         document.querySelector("#rightBackground").innerHTML = div;
-            //     }
-
-            // }
-
-
 
 
 

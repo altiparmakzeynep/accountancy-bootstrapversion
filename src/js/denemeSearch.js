@@ -42,13 +42,7 @@ function getData(value) {
 
             ul.appendChild(div);
             div = "";
-            // console.log("category", category);
-        // function myfunction(val){
-        //     var value = val.value;
-        //     console.log(value);
-        // }
-        
-
+ 
 
         var value= document.getElementById("filter_customers").value;
         // var value ="";
@@ -63,6 +57,7 @@ function getData(value) {
                                   <button class="yeterButton" id = "${item.id}" onclick="showData(this)"><img src=" ./assets/img/info.png " width="15" height="15"></button>
                                   <p class="companyName">Şirket adı: ${item.customerName}</p>
                                   <p class="companyNamee">Şirket ünvanı: ${item.customerInfo}</p>
+                                  <p class="phoneNumber">${item.phoneNumber}</p>
                                   <button class="deleteButton" id = "${item.id}"  onClick="deneme(this)"><img src=" ./assets/img/delete.png " width="9" height="9"></button>
                                 </div>`;
 
@@ -79,6 +74,7 @@ function getData(value) {
                                   <button class="yeterButton" id = "${item.id}" onclick="showData(this)"><img src=" ./assets/img/info.png " width="15" height="15"></button>
                                   <p class="companyName">Şirket adı: ${item.customerName}</p>
                                   <p class="companyNamee">Şirket ünvanı: ${item.customerInfo}</p>
+                                  <p class="phoneNumber">${item.phoneNumber}</p>
                                   <button class="deleteButton" id = "${item.id}"  onClick="deneme(this)"><img src=" ./assets/img/delete.png " width="9" height="9"></button>
                                 </div>
                                 `;
