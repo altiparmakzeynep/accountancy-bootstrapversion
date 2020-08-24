@@ -114,11 +114,12 @@ function getInfo() {
    
             companyName = "";
             companyName += `
-            ${post.data.companyName}`;
+           <p> ${post.data.companyName}${post.data.companyInfo}</p>`;
             document.querySelector(".homePageCompanyName").innerHTML = companyName;
             console.log(post.data.fullName);
-
-            topInfo = "";
+           
+            
+           topInfo = "";
             topInfo += `
             <p class="inWithKDV">KDV'li Alınan:  ${inMoneyVAT}</p>
             <p class="amountofKDV">KDV Miktarı: ${amountVAT}</p>

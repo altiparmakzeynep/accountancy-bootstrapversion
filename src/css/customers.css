@@ -310,48 +310,48 @@
   
   /* Modal Content/Box */
   .modal-content {
-    margin: 50% auto; /* 15% from the top and centered */
-    /* padding: 20px; */
+    margin-top:20%;
     border-color: white;
-    margin-left: 20%;
+    margin-left: 5%;
     border-radius:12px;
-    width: 80%; /* Could be more or less, depending on screen size */
-    background-color:white;
+    width:25%; /* Could be more or less, depending on screen size */
+    background-color:#a7a6ac;
     height: 20%;
-    position: absolute;
+    position: fixed;
     
   }
   
   /* The Close Button */
   .close {
     color: black;
-    float: right;
     font-size: 28px;
     font-weight: bold;
+    right: 10px;
     position: absolute;
+    top:5%;
   }
   .yes{
-      background-color:black;
-      color:white;
-      width: 30%;
-     border-radius: 50px;
-     border-color: black;
-     height: 25%;
-     position: absolute;
-     margin-top:15%;
-     left: 20%;
+    position: absolute;
+    background-color:black;
+    color:white;
+    width: 20%;
+   border-radius: 50px;
+   border-color: black;
+   height: 20%;
+   left: 30%;
+   margin-top:20%;
    
   }
   .no{
-      position: absolute;
-      background-color: white;
-      width: 30%;
-      right: 17%;
-      border-radius: 50px;
-      border-color: black;
-      height: 25%;
-      margin-top:15%;
-      border-width: 0.01px;
+    position: absolute;
+    background-color: white;
+    width: 20%;
+    right: 28%;
+    border-radius: 50px;
+    border-color: black;
+    height: 20%;
+    margin-top:20%;
+    border-width: 0.01px;
 
   }
 
@@ -362,11 +362,13 @@
     cursor: pointer;
   }
   .sure{
-      font-size: 20pt;
-      position: absolute;
-      left:30%;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 500;
-      margin-top:4%;
+    font-size: 20pt;
+  margin-left:28%;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  margin-top:8%;
+  }
+  .companyInfostyle{
+     margin-left: 20px;
   }
 

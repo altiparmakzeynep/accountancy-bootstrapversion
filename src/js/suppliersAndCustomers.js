@@ -2,9 +2,11 @@ var id = localStorage.getItem("id", id);
 var category = localStorage.getItem("category", category);
 var baseurl = "https://accountancy-app-api.herokuapp.com/api/v1";
 
+// var array = post.data.customers;
+
 getData();
 
-function getData() {
+function getData(e) {
     var url = `${baseurl}/customers/${id}`;
     //var url = `http://e3b5dab837cc.ngrok.io/api/v1/customers/${id}`;
     var xhr = new XMLHttpRequest();
@@ -16,17 +18,26 @@ function getData() {
         console.log(post);
         console.log(post.data.customers);
 
-        var array = post.data.customers;
+         var array = post.data.customers;
+        if( array.length == 0){
+           var yazdırıcı ="";
+           yazdırıcı += `<p class="ifNoCustomer"></p>`
+             
+        }
         
         var customerFiltered = post.data.customers.filter((item) => item.whichCategory == 1)
         var supplierFiltered = post.data.customers.filter((item) => item.whichCategory == 0)
         console.log("customerFiltered", customerFiltered)
+
+        
+        
 
         ul = document.createElement('ul');
 
         document.getElementById('rightBackground').appendChild(ul);
 
         var arrayInfo = post.data.userbalance;
+        
         var inMoney = arrayInfo.inMoney.toFixed(2);
         var amountVAT = arrayInfo.amountVAT.toFixed(2);
         var inMoneyVAT = arrayInfo.inMoneyVAT.toFixed(2);
@@ -36,23 +47,22 @@ function getData() {
             userInfo = "";
             userInfo += `
             <p class="nameSurname">${post.data.fullName}</p>
-            <p class="homePageCompanyName">${post.data.companyName}</p>
-            <p class="companyInfostyle">${post.data.companyInfo}</p>
+            <p class="homePageCompanyName">${post.data.companyName} ${post.data.companyInfo}</p>
             `;
             document.querySelector("#userInfo").innerHTML = userInfo;
 
 
             topInfo = "";
             topInfo += `
-            <p class="inWithKDV">KDV'li Alınan:  ${post.data.userbalance.inMoney}₺</p>
-            <p class="amountofKDV">KDV Miktarı: ${post.data.userbalance.amountVAT}₺</p>
-            <p class="inWithoutKDV">KDV'siz Alınan: ${post.data.userbalance.inMoneyVAT}₺</p>
-            <p class="out">Ödenen: ${post.data.userbalance.outMoney}₺</p>`;
+            <p class="inWithKDV">KDV'li Alınan:  ${inMoney}₺</p>
+            <p class="amountofKDV">KDV Miktarı: ${amountVAT}₺</p>
+            <p class="inWithoutKDV">KDV'siz Alınan: ${inMoneyVAT}₺</p>
+            <p class="out">Ödenen: ${outMoney}₺</p>`;
             document.querySelector("#topInfo").innerHTML = topInfo;
 
             totalAmount = "";
             totalAmount += `
-            <p class="total">Toplam Bakiye: ${post.data.userbalance.totalMoney}₺</p>
+            <p class="total">Toplam Bakiye: ${totalMoney}₺</p>
             `;
             document.querySelector("#leftLittleWhite").innerHTML = totalAmount;
 
@@ -65,6 +75,7 @@ function showData(item) {
     var custid = item.id;
     localStorage.setItem("customerid", custid);
     window.location = "detail.html";
+    
 }
 function deneme(item){
     var customerid = item.id;
@@ -80,7 +91,6 @@ function deleteData() {
     // var customerid = item.id;
 
     var customerid = localStorage.getItem("customerid");
-
 
     // Delete POST
     var urldelete = `${baseurl}/customers/delete/${customerid}`

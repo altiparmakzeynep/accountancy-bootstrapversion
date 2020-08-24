@@ -282,8 +282,10 @@ function notEkle(){
 
     console.log(notes);
     var date = document.getElementById('calendar').value;
-
-    console.log(date);
+    if(notes =="" || date==""){
+        alert('not veya tarih alanı boş bırakılamaz')
+    }
+   else{
 
     const data = {
         customerID: customerID,
@@ -309,8 +311,9 @@ function notEkle(){
 
     }
     xhrnotes.send(json);
-
-}
+   
+    
+}}
 
 
 // console.log(customernotes.length);

@@ -69,7 +69,7 @@ function getData() {
 
         payment += `
                 <p class="moneyOut">Yapılan Ödeme: ${arrayCost.outMoney}₺</p>
-                <p class="inMoneyVAT">KDV Miktarı: ${arrayCost.inMoneyVAT}₺</p>
+                <p class="inMoneyVAT">KDV Miktarı: ${arrayCost.amountVAT}₺</p>
                 <p class="totalMoney">Toplam: ${d}₺</p>  `;
                 
 
@@ -147,8 +147,8 @@ function getInfo() {
             userInfo = "";
             userInfo += `
             <p class="nameSurname">${post.data.fullName}</p>
-            <p class="homePageCompanyName">${post.data.companyName}</p>
-            <p class="companyInfostyle">${post.data.companyInfo}</p>`;
+            <p class="homePageCompanyName">${post.data.companyName} ${post.data.companyInfo}</p>
+           `;
             document.querySelector("#userInfo").innerHTML = userInfo;
             console.log(post.data.fullName);
 
