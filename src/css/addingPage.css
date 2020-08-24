@@ -246,12 +246,12 @@
 .nameSurname {
     position: absolute;
     top: 32%;
-    margin-left: 20%;
+    left: 9%;
 }
 
 .homePageCompanyName {
     position: absolute;
-    top: 47%;
+    top: 42%;
     right: 20%;
 }
 

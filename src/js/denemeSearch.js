@@ -59,7 +59,7 @@ function getData(value) {
                                })
                              document.querySelector("#rightBackground").innerHTML = div;
       }else{
-        customernoti += `<p class="ifNoCustomer" > Müşteriniz yoktur. </p>`;
+        customernoti += `<p class="ifNoCustomer" > Henüz eklenmiş müşteriniz bulunmamaktadır. </p>`;
         document.querySelector("#rightBackground").innerHTML = customernoti;
       }}
       
@@ -84,7 +84,7 @@ function getData(value) {
                              })
                            document.querySelector("#rightBackground").innerHTML = div;
       }else{
-      suppliernoti += `<p class="ifNoCustomer"> Tedarikçiniz  yoktur. </p>`;
+      suppliernoti += `<p class="ifNoCustomer"> Henüz eklenmiş tedarikçiniz bulunmamaktadır. </p>`;
         document.querySelector("#rightBackground").innerHTML = suppliernoti;
       }
        }
