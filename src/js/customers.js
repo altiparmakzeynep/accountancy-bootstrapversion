@@ -34,11 +34,8 @@ function getData() {
         console.log(post);
         console.log(post.data.customers);
 
-        
         console.log(array);
-        // var totalAmount = post.data.userbalance.totalMoney;
-        // console.log(post.data);
-        // console.log(totalAmount);
+
         var array = post.data.userbalance;
         var inMoney = array.inMoney.toFixed(2);
         var amountVAT = array.amountVAT.toFixed(2);
@@ -46,34 +43,29 @@ function getData() {
         var outMoney = array.outMoney.toFixed(2);
         var totalMoney = array.totalMoney.toFixed(2);
 
+        topInfo = "";
+        topInfo += `
+        <p class="inWithKDV">KDV'li Alınan:  ${inMoney}₺</p>
+        <p class="amountofKDV">KDV Miktarı: ${amountVAT}₺</p>
+        <p class="inWithoutKDV">KDV'siz Alınan: ${inMoneyVAT}₺</p>
+        <p class="out">Ödenen: ${outMoney}₺</p>`;
+        document.querySelector("#topInfo").innerHTML = topInfo;
 
-
-            
+        totalAmount = "";
+        totalAmount += `
+        <p class="total">Toplam Bakiye: ${totalMoney}₺</p>
+        `;
+        document.querySelector("#leftLittleWhite").innerHTML = totalAmount;
+        localStorage.setItem('totalAmount', post.data.userbalance.totalMoney);
 
             userInfo = "";
             userInfo += `
             <p class="nameSurname">${post.data.fullName}</p>
-            <p class="homePageCompanyName">${post.data.companyName}</p>`;
+            <p class="homePageCompanyName">${post.data.companyName} -  ${post.data.companyInfo}</p>
+           `;
             document.querySelector("#userInfo").innerHTML = userInfo;
 
-            topInfo = "";
-            topInfo += `
-            <p class="inWithKDV">KDV'li Alınan:  ${inMoney}</p>
-            <p class="amountofKDV">KDV Miktarı: ${amountVAT}</p>
-            <p class="inWithoutKDV">KDV'siz Alınan: ${inMoneyVAT}</p>
-            <p class="out">Ödenen: ${outMoney}</p>`;
-            document.querySelector("#topInfo").innerHTML = topInfo;
-
-
-            totalAmount = "";
-            totalAmount += `
-            <p class="total">Toplam Bakiye: ${totalMoney}</p>
-            `;
-            document.querySelector("#leftLittleWhite").innerHTML = totalAmount;
-            localStorage.setItem('totalAmount', post.data.userbalance.totalMoney);
-
-        
-
+          
     }
     xhr.send();
 }

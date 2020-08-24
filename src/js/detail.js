@@ -69,7 +69,7 @@ function getData() {
 
         payment += `
                 <p class="moneyOut">Yapılan Ödeme: ${arrayCost.outMoney}₺</p>
-                <p class="inMoneyVAT">KDV Miktarı: ${arrayCost.inMoneyVAT}₺</p>
+                <p class="inMoneyVAT">KDV Miktarı: ${arrayCost.amountVAT}₺</p>
                 <p class="totalMoney">Toplam: ${d}₺</p>  `;
                 
 
@@ -144,14 +144,11 @@ function getInfo() {
         var outMoney = arrayInfo.outMoney.toFixed(2);
         var totalMoney = arrayInfo.totalMoney.toFixed(2);
 
-
-
-        
-
             userInfo = "";
             userInfo += `
             <p class="nameSurname">${post.data.fullName}</p>
-            <p class="homePageCompanyName">${post.data.companyName}</p>`;
+            <p class="homePageCompanyName">${post.data.companyName} ${post.data.companyInfo}</p>
+           `;
             document.querySelector("#userInfo").innerHTML = userInfo;
             console.log(post.data.fullName);
 
@@ -163,13 +160,11 @@ function getInfo() {
             <p class="out">Ödenen: ${outMoney}</p>`;
             document.querySelector("#topInfo").innerHTML = topInfo;
 
-
             totalAmount = "";
             totalAmount += `
             <p class="total">Toplam Bakiye: ${totalMoney}</p>
             `;
             document.querySelector("#leftLittleWhite").innerHTML = totalAmount;
-
 
             localStorage.setItem('totalAmount', post.data.userbalance.totalMoney);
 
@@ -178,8 +173,6 @@ function getInfo() {
     xhr.send();
 }
 getInfo();
-
-
 
 getNotes();
 //GET NOTE
@@ -200,15 +193,16 @@ function getNotes() {
         div = "";
 
         for (var n = 0; n < arrayNotes.length; n++) {
+            var a = arrayNotes[n].date.slice(0,10);
             console.log(array.notes[n].notes);
             div += `
             <button class="customernotes-btn"  id="${arrayNotes[n].id}" onClick="getIdN(this)"><img src=" ./assets/img/delete.png " width="9" height="9"></button>
-             <p>${arrayNotes[n].notes}</p>
+             <p>${arrayNotes[n].notes} / ${a}</p>
+              
             `;
 
             document.querySelector("#notes").innerHTML = div;
         }
-
 
     }
     xhr.send();

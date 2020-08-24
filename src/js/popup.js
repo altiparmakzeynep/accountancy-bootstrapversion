@@ -1,9 +1,6 @@
 document.querySelector("#paymentSaveButton").addEventListener("click", postPayment);
 document.querySelector("#getpaidSaveButton").addEventListener("click", postGetpaid);
 
-
-
-
 function postPayment() {
 
     var id = localStorage.getItem("id", id);
@@ -31,7 +28,6 @@ function postPayment() {
 
 }
 
-
 function postGetpaid() {
 
     var id = localStorage.getItem("id", id);
@@ -58,9 +54,6 @@ function postGetpaid() {
     xhr.send(json);
 
 }
-
-
-
 
 getOperation();
 
