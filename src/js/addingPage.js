@@ -76,12 +76,6 @@ function postData(e) {
 
 }
 
-// function addCustomer() {
-//     window.location = "suppliersAndCustomers.html";
-
-
-// }
-
 
 function getInfo() {
     var url = `${baseurl}/customers/${id}`;
@@ -105,16 +99,19 @@ function getInfo() {
         console.log(post.data.fullName);
 
 
-
-        
+        var arrayInfo = post.data.userbalance;
+        var inMoney = arrayInfo.inMoney.toFixed(2);
+        var amountVAT = arrayInfo.amountVAT.toFixed(2);
+        var inMoneyVAT = arrayInfo.inMoneyVAT.toFixed(2);
+        var outMoney = arrayInfo.outMoney.toFixed(2);
+        var totalMoney = arrayInfo.totalMoney.toFixed(2);
 
             userName = "";
             userName += `
             ${post.data.fullName}`;
             document.querySelector(".nameSurname").innerHTML = userName;
             console.log(post.data.fullName);
-
-            
+   
             companyName = "";
             companyName += `
             ${post.data.companyName}`;
@@ -123,16 +120,16 @@ function getInfo() {
 
             topInfo = "";
             topInfo += `
-            <p class="inWithKDV">KDV'li Alınan:  ${post.data.userbalance.inMoneyVAT}</p>
-            <p class="amountofKDV">KDV Miktarı: ${post.data.userbalance.amountVAT}</p>
-            <p class="inWithoutKDV">KDV'siz Alınan: ${post.data.userbalance.inMoney}</p>
-            <p class="out">Ödenen: ${post.data.userbalance.outMoney}</p>`;
+            <p class="inWithKDV">KDV'li Alınan:  ${inMoneyVAT}</p>
+            <p class="amountofKDV">KDV Miktarı: ${amountVAT}</p>
+            <p class="inWithoutKDV">KDV'siz Alınan: ${inMoney}</p>
+            <p class="out">Ödenen: ${outMoney}</p>`;
             document.querySelector(".topInfo").innerHTML = topInfo;
 
 
             totalAmount = "";
             totalAmount += `
-            <p class="total">Toplam Bakiye: ${post.data.userbalance.totalMoney}</p>
+            <p class="total">Toplam Bakiye: ${totalMoney}</p>
             `;
             document.querySelector(".leftLittleWhite").innerHTML = totalAmount;
 

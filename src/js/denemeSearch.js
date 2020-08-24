@@ -2,15 +2,7 @@ var id = localStorage.getItem("id", id);
 var category = localStorage.getItem("category", category);
 var baseurl = "https://accountancy-app-api.herokuapp.com/api/v1";
 
-
 getData();
-// function myfunction(val){
-    // var value= document.getElementById("filter_customers").value;
-    
-//     console.log(val);
-// }
-
-
 
 function getData(value) {
     var url = `${baseurl}/customers/${id}`;
@@ -19,7 +11,6 @@ function getData(value) {
 
     xhr.open("GET", url, true);
     xhr.onload = function () {
-
 
         var post = JSON.parse(this.response);
         console.log(post);
@@ -34,7 +25,6 @@ function getData(value) {
         // console.log(totalAmount);
         ul = document.createElement('ul');
 
-
         document.getElementById('rightBackground').appendChild(ul);
 
         let div = document.createElement('div');
@@ -43,7 +33,6 @@ function getData(value) {
             ul.appendChild(div);
             div = "";
  
-
         var value= document.getElementById("filter_customers").value;
         // var value ="";
         console.log("value : " +value);
@@ -84,39 +73,7 @@ function getData(value) {
                                  })
                                document.querySelector("#rightBackground").innerHTML = div;
         }
-        
-
-        
-        
-
     }
     xhr.send();
 }
 
-var modal = document.getElementById("modal");
-console.log('modal',modal);
-localStorage.setItem('modal',modal);
-
-// Get the <span> element that closes the modal
-// var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on the button, open the modal
- function war(item) {
-    // var modal1 = localStorage.getItem('modal');
-    console.log(modal);
-    modal.style.display = 'block';
-   var custid = item.id;
-   console.log(custid);
-}
-
-// When the user clicks on <span> (x), close the modal
-// span.onclick = function() {
-//   modal.style.display = "none";
-// }
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}

@@ -125,9 +125,8 @@
 }
 
 .companyInput {
-   
-   align-self: center;
-   display: flex;
+    align-self: center;
+    display: flex;
     background-color: #e5e6e9;
     border-radius: 8px;
     margin-bottom:10px;
@@ -137,8 +136,6 @@
 }
 
 .companyNameInput {
-   
-   
     background-color: #e5e6e9;
     border-radius: 8px;
     margin-bottom:10px;
@@ -148,8 +145,6 @@
 }
 
 .numberInput {
-   
-   
     background-color: #e5e6e9;
     border-radius: 8px;
     margin-bottom:10px;
@@ -173,7 +168,6 @@
     border-radius: 8px;
     margin-bottom:10px;
     left: 10%;
-   
     border: none;
 }
 
@@ -189,32 +183,23 @@
 }
 
 .taxOffice {
-   
-    margin-left: 11%;
+    margin-left: 0%;
 }
 
 .taxNumber {
-   
-   
-    margin-left: 11%;
+    margin-left: 0%;
 }
 
 .number {
-   
-    
-    margin-left: 11%;
+    margin-left: 0%;
 }
 
 .companyName {
-   
-  
-    margin-left: 11%;
+    margin-left: 0%;
 }
 
 .company {
-   
-    
-    margin-left: 11%;
+    margin-left: 0%;
 }
 
 .saveButton {
@@ -345,12 +330,9 @@
     margin-left:10%;
     margin-top: 5%;
     height: 70%;
-
-  
 }
 
 .radioButtons{
-    
     bottom: 8%;
     margin-left: 10.5%;
     
