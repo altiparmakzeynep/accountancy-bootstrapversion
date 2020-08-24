@@ -34,11 +34,18 @@ function getData() {
         console.log(post);
         console.log(post.data.customers);
 
-        var array = post.data.customers;
+        
         console.log(array);
         // var totalAmount = post.data.userbalance.totalMoney;
         // console.log(post.data);
         // console.log(totalAmount);
+        var array = post.data.userbalance;
+        var inMoney = array.inMoney.toFixed(2);
+        var amountVAT = array.amountVAT.toFixed(2);
+        var inMoneyVAT = array.inMoneyVAT.toFixed(2);
+        var outMoney = array.outMoney.toFixed(2);
+        var totalMoney = array.totalMoney.toFixed(2);
+
 
 
             
@@ -51,16 +58,16 @@ function getData() {
 
             topInfo = "";
             topInfo += `
-            <p class="inWithKDV">KDV'li Alınan:  ${post.data.userbalance.inMoney}</p>
-            <p class="amountofKDV">KDV Miktarı: ${post.data.userbalance.amountVAT}</p>
-            <p class="inWithoutKDV">KDV'siz Alınan: ${post.data.userbalance.inMoneyVAT}</p>
-            <p class="out">Ödenen: ${post.data.userbalance.outMoney}</p>`;
+            <p class="inWithKDV">KDV'li Alınan:  ${inMoney}</p>
+            <p class="amountofKDV">KDV Miktarı: ${amountVAT}</p>
+            <p class="inWithoutKDV">KDV'siz Alınan: ${inMoneyVAT}</p>
+            <p class="out">Ödenen: ${outMoney}</p>`;
             document.querySelector("#topInfo").innerHTML = topInfo;
 
 
             totalAmount = "";
             totalAmount += `
-            <p class="total">Toplam Bakiye: ${post.data.userbalance.totalMoney}</p>
+            <p class="total">Toplam Bakiye: ${totalMoney}</p>
             `;
             document.querySelector("#leftLittleWhite").innerHTML = totalAmount;
             localStorage.setItem('totalAmount', post.data.userbalance.totalMoney);
