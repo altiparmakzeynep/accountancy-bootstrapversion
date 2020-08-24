@@ -20,25 +20,43 @@ function postData(e) {
     console.log(whichCategory);
     localStorage.setItem("category", whichCategory);
     
+    var taxNumber2 = document.getElementById("taxNumberInput").value;
     var number=document.getElementById("numberInput").value;
-    if (number.length == 13){
+    var companyName2 = document.getElementById("companyNameInput").value;
+
+    if (number.length == 13 ){
         var phoneNumber = number;
     }else{
-        alert('Telefon numarası eksik ya da hatalı. Tekrar giriniz.');
+        alert('telefon numarası')
+        window.location.reload();
     }
+    if(taxNumber2.length ==10 ){
+        var taxNumber= taxNumber2;
+    }else{
+        alert('vergi numarsı eksik girilemez')
+        window.location.reload();
+    }   
+    if(companyName2.length !=0){
+        var customerName = companyName2;
+    }else{
+        alert('şirket adı alanı bos bırakılamaz')
+        window.location.reload();
+    }
+       
 
 
 
     const data = {
         userID: id,
         customerInfo: document.getElementById("companyInput").value,
-        customerName: document.getElementById("companyNameInput").value,
+        customerName: customerName,
         whichCategory: whichCategory,
         phoneNumber: phoneNumber,
-        taxNumber: document.getElementById("taxNumberInput").value,
+        taxNumber: taxNumber,
         taxAddress: document.getElementById("taxOfficeInput").value
 
     }
+    
 
 
     var json = JSON.stringify(data);
@@ -55,6 +73,7 @@ function postData(e) {
     xhr.send(json);
     // console.log(data);
     e.preventDefault();
+
 }
 
 // function addCustomer() {

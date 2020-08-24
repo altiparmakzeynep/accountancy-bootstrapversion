@@ -30,12 +30,23 @@ document.querySelector('.paymentSaveButton').addEventListener('click',odemeYap);
 
 
 function odemeYap(){
-    var cost = parseFloat(document.getElementById('paymentAmount').value);
+    var cost1 = document.getElementById('paymentAmount').value;
     var date = document.getElementById('paymentCalendar').value;
+    
     // var VAT2 = document.getElementsByName('radio1');
     var inOrOut = "0";
     var infoKDV = "false";
+    if(cost1 == ""){
+        alert('Lütfen geçerli bir tutar girin')
+    }else{
+     var cost =  parseFloat(cost1);
+
+    }
     
+    if(date == ""){
+        alert('Lütfen geçerli bir tarih girin')
+    }
+   
     // console.log(VAT.values());
 
     // for(var i = 0; i < VAT2.length; i++){
@@ -82,12 +93,27 @@ window.onclick = function(event) {
 document.querySelector('.getpaidSaveButton').addEventListener('click',odemeAl);
 
 
-function odemeAl(){
-    var cost = parseFloat(document.getElementById('odemetutari-odemeal').value);
+function odemeAl(e){
+    // if(cost == ""){
+    //     alert('Lütfen geçerli bir tutar girin')
+    // }else if(date == ""){
+    //     alert('Lütfen geçerli bir tutar girin')
+    // }
+    var cost1 = document.getElementById('odemetutari-odemeal').value;
     var date = document.getElementById('getpaidCalendar').value;
     var VAT1 = document.getElementsByName('customerAndSupplierRadioBtn');
     var inOrOut = "1";
+    if(cost1 == ""){
+        alert('Lütfen geçerli bir tutar girin')
+    }else{
+     var cost =  parseFloat(cost1);
 
+    }
+    
+    
+    if(date == ""){
+        alert('Lütfen geçerli bir tarih girin')
+    }
     
     
     // console.log(VAT.values());
@@ -98,14 +124,16 @@ function odemeAl(){
             var infoKDV = VAT1[i].value;
 
         }}
-
+if(infoKDV==null){
+    alert('KDV bilgisi giriniz')
+}
     console.log(cost);
     console.log(date);
     console.log(infoKDV);
 
     odemeAlYap(cost,infoKDV,inOrOut,date);
 
-}
+e.preventDefault();}
 
 
 

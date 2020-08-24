@@ -139,7 +139,8 @@ function getInfo() {
             userInfo = "";
             userInfo += `
             <p class="nameSurname">${post.data.fullName}</p>
-            <p class="homePageCompanyName">${post.data.companyName}</p>`;
+            <p class="homePageCompanyName">${post.data.companyName}</p>
+            <p class="companyInfostyle">${post.data.companyInfo}</p>`;
             document.querySelector("#userInfo").innerHTML = userInfo;
             console.log(post.data.fullName);
 
@@ -188,10 +189,12 @@ function getNotes() {
         div = "";
 
         for (var n = 0; n < arrayNotes.length; n++) {
+            var a = arrayNotes[n].date.slice(0,10);
             console.log(array.notes[n].notes);
             div += `
             <button class="customernotes-btn"  id="${arrayNotes[n].id}" onClick="getIdN(this)"><img src=" ./assets/img/delete.png " width="9" height="9"></button>
-             <p>${arrayNotes[n].notes}</p>
+             <p>${arrayNotes[n].notes} / ${a}</p>
+              
             `;
 
             document.querySelector("#notes").innerHTML = div;

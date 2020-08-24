@@ -46,7 +46,8 @@ function getData() {
             userInfo = "";
             userInfo += `
             <p class="nameSurname">${post.data.fullName}</p>
-            <p class="homePageCompanyName">${post.data.companyName}</p>`;
+            <p class="homePageCompanyName">${post.data.companyName}</p>
+            <p class="companyInfostyle">${post.data.companyInfo}</p>`;
             document.querySelector("#userInfo").innerHTML = userInfo;
 
             topInfo = "";
