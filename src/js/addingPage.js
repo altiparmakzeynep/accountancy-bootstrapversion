@@ -57,12 +57,6 @@ function postData(e) {
     e.preventDefault();
 }
 
-// function addCustomer() {
-//     window.location = "suppliersAndCustomers.html";
-
-
-// }
-
 
 function getInfo() {
     var url = `${baseurl}/customers/${id}`;
@@ -93,17 +87,12 @@ function getInfo() {
         var outMoney = arrayInfo.outMoney.toFixed(2);
         var totalMoney = arrayInfo.totalMoney.toFixed(2);
 
-
-
-        
-
             userName = "";
             userName += `
             ${post.data.fullName}`;
             document.querySelector(".nameSurname").innerHTML = userName;
             console.log(post.data.fullName);
-
-            
+   
             companyName = "";
             companyName += `
             ${post.data.companyName}`;

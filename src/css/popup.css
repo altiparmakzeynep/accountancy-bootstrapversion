@@ -1,6 +1,6 @@
   /* The Modal (background) */
   
-  .paymentModal {
+.paymentModal {
       display: none;
       /* Hidden by default */
       position: fixed;
@@ -24,7 +24,7 @@
   }
   /* Modal Content */
   
-  .paymentModal-content {
+.paymentModal-content {
       background-color: white;
       margin: auto;
       border-radius: 8px;
@@ -34,7 +34,7 @@
       text-align: center;
   }
   
-  .paymentAmount {
+.paymentAmount {
       background-color: #d1d1d4;
       margin: auto;
       border-radius: 8px;
@@ -46,7 +46,7 @@
       margin-left: 10%;
   }
   
-  .KDV {
+.KDV {
       position: absolute;
       background-color: white;
       border-radius: 8px;
@@ -59,7 +59,7 @@
       border-color: #d1d1d4;
   }
   
-  .withoutKDV {
+.withoutKDV {
       position: absolute;
       background-color: white;
       border-radius: 8px;
@@ -72,7 +72,7 @@
       border-color: #d1d1d4;
   }
   
-  .date {
+.date {
       background-color: #d1d1d4;
       margin: auto;
       border-radius: 8px;
@@ -84,7 +84,7 @@
       position: absolute;
   }
   
-  .takePayment {
+.takePayment {
       background-color: #282425;
       margin: auto;
       border-radius: 20px;
@@ -95,7 +95,7 @@
       position: relative;
   }
   
-  .container input {
+.container input {
       position: absolute;
       opacity: 0;
       cursor: pointer;
@@ -103,7 +103,7 @@
       width: 0;
   }
   
-  .checkbox {
+.checkbox {
       position: absolute;
       top: 25%;
       left: -6%;
@@ -148,8 +148,6 @@
     font-size: 28px;
     font-weight: bold;
 }
-
-
 .modalP {
   display: none; /* Hidden by default */
   position: absolute; /* Stay in place */
@@ -159,7 +157,7 @@
   }
   
   /* Modal Content/Box */
-  .modal-contentPayment {
+.modal-contentPayment {
     /* 15% from the top and centered */
     /* padding: 20px; */
     margin-top: 20%;
@@ -174,7 +172,7 @@
   }
   
   /* The Close Button */
-  .closeP {
+.closeP {
     color: black;
     font-size: 28px;
     font-weight: bold;
@@ -183,13 +181,13 @@
     float: right;
   }
   
-  .closeP:hover,
-  .closeP:focus {
+.closeP:hover,
+.closeP:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
   }
-  .yesPay{
+.yesPay{
     position: absolute;
     background-color:black;
     color:white;
@@ -219,9 +217,7 @@
   font-weight: 500;
   margin-top:0%;
 }
-
-
-  .modalN {
+.modalN {
     display: none; /* Hidden by default */
   position: absolute; /* Stay in place */
   z-index: 2; /* Sit on top */
@@ -231,7 +227,7 @@
   
   /* Modal Content/Box */
 
-  .modal-contentNote {
+.modal-contentNote {
     margin-top:20%;
     border-color: white;
     margin-left: 5%;
@@ -243,7 +239,7 @@
   }
   
   /* The Close Button */
-  .closeN {
+.closeN {
     color: black;
     font-size: 28px;
     font-weight: bold;
@@ -251,13 +247,13 @@
     position: absolute;
   }
   
-  .closeN:hover,
-  .closeN:focus {
+.closeN:hover,
+.closeN:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
   }
-  .yesNote{
+.yesNote{
     position: absolute;
     background-color:black;
     color:white;

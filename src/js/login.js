@@ -9,8 +9,6 @@ function postData() {
         password: document.getElementById("password").value
 
     }
-
-
     var json = JSON.stringify(data);
 
     var url = `${baseurl}/users/login`;
@@ -35,8 +33,5 @@ function postData() {
 
         }
     }
-
     xhr.send(json);
-
-
 }

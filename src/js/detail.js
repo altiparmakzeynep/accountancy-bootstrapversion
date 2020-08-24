@@ -144,10 +144,6 @@ function getInfo() {
         var outMoney = arrayInfo.outMoney.toFixed(2);
         var totalMoney = arrayInfo.totalMoney.toFixed(2);
 
-
-
-        
-
             userInfo = "";
             userInfo += `
             <p class="nameSurname">${post.data.fullName}</p>
@@ -163,13 +159,11 @@ function getInfo() {
             <p class="out">Ödenen: ${outMoney}</p>`;
             document.querySelector("#topInfo").innerHTML = topInfo;
 
-
             totalAmount = "";
             totalAmount += `
             <p class="total">Toplam Bakiye: ${totalMoney}</p>
             `;
             document.querySelector("#leftLittleWhite").innerHTML = totalAmount;
-
 
             localStorage.setItem('totalAmount', post.data.userbalance.totalMoney);
 
@@ -178,8 +172,6 @@ function getInfo() {
     xhr.send();
 }
 getInfo();
-
-
 
 getNotes();
 //GET NOTE
@@ -208,7 +200,6 @@ function getNotes() {
 
             document.querySelector("#notes").innerHTML = div;
         }
-
 
     }
     xhr.send();
