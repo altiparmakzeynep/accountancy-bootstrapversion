@@ -381,17 +381,7 @@
                             
                            
                         }
-                        .moneyIn {
-                            position: fixed;
-                            margin-top: 1.5%;
-                            margin-left: 1%;
-                        }
-                        
-                        .moneyOut {
-                            position: fixed;
-                            margin-top: 6%;
-                            margin-left: 1%;
-                        }
+                
                         
                         .hrRight {
                             position: absolute;
@@ -466,4 +456,24 @@
                             margin-top:-3.5px;
                             margin-left:-3px ;
                         }
-                     
+                     .totalMoney{
+                        position: absolute;
+                        top: 70%;
+                        margin-left: 3%;
+                     }
+                     .inMoneyVAT{
+                        position: absolute;
+                        top: 50%;
+                        margin-left: 3%;
+                     }
+                     .moneyIn {
+                        position: absolute;
+                        top: 10%;
+                        margin-left: 3%;
+                    }
+                    
+                    .moneyOut {
+                        position: absolute;
+                        top: 30%;
+                        margin-left: 3%;
+                    }

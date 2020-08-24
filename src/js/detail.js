@@ -60,14 +60,18 @@ function getData() {
         var a = arrayCost.inMoney;
         var b = arrayCost.inMoneyVAT;
         var c = a + b ;
+        var d = c + (-arrayCost.outMoney);
 
 
         payment += `
-         <p class="moneyIn">Alınan Ödeme: ${c} </p> `;
+         <p class="moneyIn">Alınan Ödeme: ${c}₺ </p> `;
         document.querySelector("#companyDetail").innerHTML = payment;
 
         payment += `
-                <p class="moneyOut">Yapılan Ödeme: ${arrayCost.outMoney}</p> `;
+                <p class="moneyOut">Yapılan Ödeme: ${arrayCost.outMoney}₺</p>
+                <p class="inMoneyVAT">KDV Miktarı: ${arrayCost.inMoneyVAT}₺</p>
+                <p class="totalMoney">Toplam: ${d}₺</p>  `;
+                
 
         document.querySelector("#companyDetail").innerHTML = payment;
 
@@ -86,7 +90,7 @@ function getData() {
                 divpayment += `
                     <div>
                      <button class="customerpayments-btn" id="${post.customer.payments[j].id}" onClick="getIdP(this)"><img class="crossImage" src=" ./assets/img/delete.png " width="9" height="9"></button>
-                     <p class="historyTexts"> - ${arrayPayment[j].cost}£  -  ${a}</p>
+                     <p class="historyTexts"> - ${arrayPayment[j].cost}₺  -  ${a}</p>
                     </div>
                     `;
             }else{
@@ -95,7 +99,7 @@ function getData() {
                 divpayment += `
                     <div>
                      <button class="customerpayments-btn" id="${post.customer.payments[j].id}" onClick="getIdP(this)"><img class="crossImage" src=" ./assets/img/delete.png " width="9" height="9"></button>
-                     <p class="historyTexts"> + ${arrayPayment[j].cost}£  -  ${a}</p>
+                     <p class="historyTexts"> + ${arrayPayment[j].cost}₺  -  ${a}</p>
                      </div>
                     `;
             }
