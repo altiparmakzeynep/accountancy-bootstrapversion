@@ -24,10 +24,10 @@ function postData(e) {
     var number=document.getElementById("numberInput").value;
     var companyName2 = document.getElementById("companyNameInput").value;
 
-    if (number.length == 13 ){
+    if (number.length == 11 ){
         var phoneNumber = number;
     }else{
-        alert('telefon numarası')
+        alert('telefon numarası hatalı')
         window.location.reload();
     }
     if(taxNumber2.length ==10 ){
@@ -67,11 +67,12 @@ function postData(e) {
 
 
     xhr.onload = function () {
-        window.location = "suppliersAndCustomers.html";
+        console.log("response", this.response);
+        // window.location = "suppliersAndCustomers.html";
     }
 
     xhr.send(json);
-    // console.log(data);
+    console.log(data);
     e.preventDefault();
 
 }
