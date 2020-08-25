@@ -35,6 +35,12 @@ function getData() {
         console.log(post.data.customers);
 
         console.log(array);
+        userInfo = "";
+        userInfo += `
+        <p class="nameSurname">${post.data.fullName}</p>
+        <p class="homePageCompanyName">${post.data.companyName} -  ${post.data.companyInfo}</p>
+       `;
+        document.querySelector("#userInfo").innerHTML = userInfo;
 
         var array = post.data.userbalance;
         var inMoney = array.inMoney.toFixed(2);
@@ -58,12 +64,7 @@ function getData() {
         document.querySelector("#leftLittleWhite").innerHTML = totalAmount;
         localStorage.setItem('totalAmount', post.data.userbalance.totalMoney);
 
-            userInfo = "";
-            userInfo += `
-            <p class="nameSurname">${post.data.fullName}</p>
-            <p class="homePageCompanyName">${post.data.companyName} -  ${post.data.companyInfo}</p>
-           `;
-            document.querySelector("#userInfo").innerHTML = userInfo;
+         
 
           
     }

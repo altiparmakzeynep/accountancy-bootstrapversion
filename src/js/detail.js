@@ -137,12 +137,6 @@ function getInfo() {
         console.log(post.data.fullName);
 
 
-        var arrayInfo = post.data.userbalance;
-        var inMoney = arrayInfo.inMoney.toFixed(2);
-        var amountVAT = arrayInfo.amountVAT.toFixed(2);
-        var inMoneyVAT = arrayInfo.inMoneyVAT.toFixed(2);
-        var outMoney = arrayInfo.outMoney.toFixed(2);
-        var totalMoney = arrayInfo.totalMoney.toFixed(2);
 
             userInfo = "";
             userInfo += `
@@ -151,6 +145,14 @@ function getInfo() {
            `;
             document.querySelector("#userInfo").innerHTML = userInfo;
             console.log(post.data.fullName);
+
+
+        var arrayInfo = post.data.userbalance;
+        var inMoney = arrayInfo.inMoney.toFixed(2);
+        var amountVAT = arrayInfo.amountVAT.toFixed(2);
+        var inMoneyVAT = arrayInfo.inMoneyVAT.toFixed(2);
+        var outMoney = arrayInfo.outMoney.toFixed(2);
+        var totalMoney = arrayInfo.totalMoney.toFixed(2);
 
             topInfo = "";
             topInfo += `

@@ -38,11 +38,7 @@ function getData(e) {
 
         var arrayInfo = post.data.userbalance;
         
-        var inMoney = arrayInfo.inMoney.toFixed(2);
-        var amountVAT = arrayInfo.amountVAT.toFixed(2);
-        var inMoneyVAT = arrayInfo.inMoneyVAT.toFixed(2);
-        var outMoney = arrayInfo.outMoney.toFixed(2);
-        var totalMoney = arrayInfo.totalMoney.toFixed(2);
+      
 
             userInfo = "";
             userInfo += `
@@ -50,6 +46,12 @@ function getData(e) {
             <p class="homePageCompanyName">${post.data.companyName} ${post.data.companyInfo}</p>
             `;
             document.querySelector("#userInfo").innerHTML = userInfo;
+
+            var inMoney = arrayInfo.inMoney.toFixed(2);
+            var amountVAT = arrayInfo.amountVAT.toFixed(2);
+            var inMoneyVAT = arrayInfo.inMoneyVAT.toFixed(2);
+            var outMoney = arrayInfo.outMoney.toFixed(2);
+            var totalMoney = arrayInfo.totalMoney.toFixed(2);
 
 
             topInfo = "";

@@ -2,7 +2,7 @@ document.querySelector("#saveButton").addEventListener("click", postData);
 let id = localStorage.getItem("id");
 var baseurl = "https://accountancy-app-api.herokuapp.com/api/v1";
 
-// getInfo();
+getInfo();
 
 
 function postData(e) {
@@ -24,7 +24,7 @@ function postData(e) {
     var number=document.getElementById("numberInput").value;
     var companyName2 = document.getElementById("companyNameInput").value;
 
-    if (number.length == 11 ){
+    if (number.length == 11 || number.length ==10 || number.length == 7){
         var phoneNumber = number;
     }else{
         alert('telefon numarası hatalı')
@@ -68,7 +68,7 @@ function postData(e) {
 
     xhr.onload = function () {
         console.log("response", this.response);
-        // window.location = "suppliersAndCustomers.html";
+        window.location = "suppliersAndCustomers.html";
     }
 
     xhr.send(json);
@@ -100,12 +100,7 @@ function getInfo() {
         console.log(post.data.fullName);
 
 
-        var arrayInfo = post.data.userbalance;
-        var inMoney = arrayInfo.inMoney.toFixed(2);
-        var amountVAT = arrayInfo.amountVAT.toFixed(2);
-        var inMoneyVAT = arrayInfo.inMoneyVAT.toFixed(2);
-        var outMoney = arrayInfo.outMoney.toFixed(2);
-        var totalMoney = arrayInfo.totalMoney.toFixed(2);
+        
 
             userName = "";
             userName += `
@@ -118,6 +113,13 @@ function getInfo() {
            <p> ${post.data.companyName}${post.data.companyInfo}</p>`;
             document.querySelector(".homePageCompanyName").innerHTML = companyName;
             console.log(post.data.fullName);
+
+            var arrayInfo = post.data.userbalance;
+            var inMoney = arrayInfo.inMoney.toFixed(2);
+            var amountVAT = arrayInfo.amountVAT.toFixed(2);
+            var inMoneyVAT = arrayInfo.inMoneyVAT.toFixed(2);
+            var outMoney = arrayInfo.outMoney.toFixed(2);
+            var totalMoney = arrayInfo.totalMoney.toFixed(2);
            
             
            topInfo = "";
