@@ -408,21 +408,32 @@
                         }
                             .totalMoney{
                             position: absolute;
-                            top: 70%;
+                            top: 77%;
                             margin-left: 3%;
+                            font-size: smaller;
                         }
                             .inMoneyVAT{
                             position: absolute;
-                            top: 50%;
+                            top: 58%;
                             margin-left: 3%;
+                            font-size: smaller;
                         }
                             .moneyIn {
                             position: absolute;
-                            top: 10%;
+                            top: 5.5%;
                             margin-left: 3%;
+                            font-size: smaller;
                         }
                             .moneyOut {
                             position: absolute;
-                            top: 30%;
+                            top: 38.5%;
                             margin-left: 3%;
+                            font-size: smaller;
+                        }
+                        .moneyInVat{
+                            position: absolute;
+                            top: 22%;
+                            
+                            margin-left: 3%;
+                            font-size: smaller;
                         }

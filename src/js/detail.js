@@ -56,30 +56,28 @@ function getData() {
         document.querySelector("#customers").innerHTML = div;
 
 
-        payment = "";
-        var a = arrayCost.inMoney;
-        var b = arrayCost.inMoneyVAT;
-        var c = a + b ;
-        var d = c + (-arrayCost.outMoney);
+            payment = "";
+            var a = arrayCost.inMoney;
+            var b = arrayCost.inMoneyVAT;
+            console.log("anın 3. sü " , a.toString().length);
+            var d = arrayCost.totalMoney;
 
+           
+            payment += `
+            <p class="moneyIn"> KDV'siz Alınan Ödeme: ${a}₺ </p> 
+            <p class="moneyInVat"> KDV'li Alınan Ödeme: ${b}₺ </p> 
+            <p class="moneyOut">Yapılan Ödeme: ${arrayCost.outMoney}₺</p>
+            <p class="inMoneyVAT">KDV Miktarı: ${arrayCost.amountVAT.toFixed(3)}₺</p>
+            <p class="totalMoney">Toplam: ${d}₺</p>  `;
+                    
 
-        payment += `
-         <p class="moneyIn">Alınan Ödeme: ${c}₺ </p> `;
-        document.querySelector("#companyDetail").innerHTML = payment;
+            document.querySelector("#companyDetail").innerHTML = payment;
 
-        payment += `
-                <p class="moneyOut">Yapılan Ödeme: ${arrayCost.outMoney}₺</p>
-                <p class="inMoneyVAT">KDV Miktarı: ${arrayCost.amountVAT}₺</p>
-                <p class="totalMoney">Toplam: ${d}₺</p>  `;
-                
-
-        document.querySelector("#companyDetail").innerHTML = payment;
-
-        totalAmount = "";
-        totalAmount += `
-            <p class="total">Toplam Bakiye: </p>
-            `;
-        document.querySelector("#leftLittleWhite").innerHTML = totalAmount;
+            totalAmount = "";
+            totalAmount += `
+                <p class="total">Toplam Bakiye: </p>
+                `;
+            document.querySelector("#leftLittleWhite").innerHTML = totalAmount;
 
 
         divpayment = "";
